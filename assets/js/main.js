@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initHeaderScroll();
   initMobileMenu();
+  initActiveNavScrollSpy();
   initAnimatedCounters();
   initBrandFilters();
   initBranchFiltersAndSearch();
@@ -47,11 +48,11 @@ function initThemeToggle() {
       if (toggleIcon) toggleIcon.className = 'fas fa-sun text-amber-500';
       if (toggleText) toggleText.textContent = 'White Theme';
       if (toggleBtn) {
-        toggleBtn.className = 'nav-theme-btn flex items-center space-x-2 px-3.5 py-2 rounded-full text-xs font-bold transition-all duration-300 focus:outline-none';
+        toggleBtn.className = 'nav-theme-btn w-9 h-9 sm:w-auto sm:px-3.5 sm:py-2 rounded-full text-xs font-bold flex items-center justify-center space-x-2 transition-all duration-300 focus:outline-none';
       }
 
       if (mobileToggleBtn) {
-        mobileToggleBtn.innerHTML = '<i class="fas fa-sun text-amber-500"></i><span>White Theme</span>';
+        mobileToggleBtn.innerHTML = '<i class="fas fa-sun text-amber-500"></i><span id="mobile-theme-toggle-text">White Theme</span>';
         mobileToggleBtn.className = 'px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center space-x-2 border border-amber-300 bg-white text-slate-800 shadow-sm';
       }
     } else {
@@ -62,11 +63,11 @@ function initThemeToggle() {
       if (toggleIcon) toggleIcon.className = 'fas fa-moon text-amber-400';
       if (toggleText) toggleText.textContent = 'Dark Theme';
       if (toggleBtn) {
-        toggleBtn.className = 'nav-theme-btn flex items-center space-x-2 px-3.5 py-2 rounded-full text-xs font-bold transition-all duration-300 focus:outline-none';
+        toggleBtn.className = 'nav-theme-btn w-9 h-9 sm:w-auto sm:px-3.5 sm:py-2 rounded-full text-xs font-bold flex items-center justify-center space-x-2 transition-all duration-300 focus:outline-none';
       }
 
       if (mobileToggleBtn) {
-        mobileToggleBtn.innerHTML = '<i class="fas fa-moon text-amber-400"></i><span>Dark Theme</span>';
+        mobileToggleBtn.innerHTML = '<i class="fas fa-moon text-amber-400"></i><span id="mobile-theme-toggle-text">Dark Theme</span>';
         mobileToggleBtn.className = 'px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center space-x-2 border border-slate-700 bg-slate-900 text-gray-200 shadow-sm';
       }
     }
@@ -145,6 +146,47 @@ function initMobileMenu() {
   mobileLinks.forEach(link => {
     link.addEventListener('click', closeMenu);
   });
+}
+
+/* ==========================================================================
+   2b. Active Navigation Capsule ScrollSpy
+   ========================================================================== */
+function initActiveNavScrollSpy() {
+  const navCapsuleItems = document.querySelectorAll('.nav-capsule-item');
+  if (!navCapsuleItems.length) return;
+
+  const sections = [];
+  navCapsuleItems.forEach(link => {
+    const hash = link.getAttribute('href');
+    if (hash && hash.startsWith('#')) {
+      const section = document.querySelector(hash);
+      if (section) {
+        sections.push({ link, element: section });
+      }
+    }
+  });
+
+  function updateActivePill() {
+    const scrollPos = window.scrollY + 120;
+    let current = null;
+
+    for (let i = 0; i < sections.length; i++) {
+      const top = sections[i].element.offsetTop;
+      const height = sections[i].element.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        current = sections[i];
+        break;
+      }
+    }
+
+    navCapsuleItems.forEach(link => link.classList.remove('active-pill'));
+    if (current) {
+      current.link.classList.add('active-pill');
+    }
+  }
+
+  window.addEventListener('scroll', updateActivePill, { passive: true });
+  updateActivePill();
 }
 
 /* ==========================================================================
@@ -238,8 +280,9 @@ function initGoldParticleCanvas() {
   let mouse = { x: null, y: null, radius: 150 };
 
   window.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
   });
 
   window.addEventListener('mouseleave', () => {
@@ -484,12 +527,12 @@ function initBranchFiltersAndSearch() {
     let count = 0;
 
     branchItems.forEach(item => {
-      const name = item.getAttribute('data-name').toLowerCase();
-      const city = item.getAttribute('data-city').toLowerCase();
-      const state = item.getAttribute('data-state');
-      const type = item.getAttribute('data-type');
+      const name = (item.getAttribute('data-name') || '').toLowerCase();
+      const city = (item.getAttribute('data-city') || '').toLowerCase();
+      const state = item.getAttribute('data-state') || '';
+      const type = item.getAttribute('data-type') || '';
 
-      const matchesSearch = name.includes(searchTerm) || city.includes(searchTerm);
+      const matchesSearch = !searchTerm || name.includes(searchTerm) || city.includes(searchTerm);
       const matchesType = (selectedType === 'all' || type === selectedType);
       const matchesState = (activeState === 'all' || state === activeState);
 
@@ -508,6 +551,9 @@ function initBranchFiltersAndSearch() {
 
   if (branchSearchInput) branchSearchInput.addEventListener('input', filterBranches);
   if (branchFilterSelect) branchFilterSelect.addEventListener('change', filterBranches);
+
+  // Initialize initial count and display
+  filterBranches();
 }
 
 /* ==========================================================================
