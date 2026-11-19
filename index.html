@@ -1,0 +1,2128 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth light overflow-x-hidden">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    // Immediate Theme Pre-Initialization to prevent theme flash
+    (function() {
+      const savedTheme = localStorage.getItem('aaron_theme') || 'light';
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+      } else {
+        document.documentElement.classList.add('light');
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aaron Garments | Youth-Driven Menswear & Retail Network | Founder, CEO & MD Aaron</title>
+  <meta name="description" content="Official website of Aaron Garments, led by Founder, CEO & MD Aaron. Menswear retail and wholesale powerhouse with 15+ stores (22,000+ sq. ft.) across TN & AP, 10,000 sq. ft. Central Chennai Distribution Centre (DC), and Worldwide & Pan-India sourcing.">
+  <meta name="keywords" content="Aaron Garments, Aaron, Founder CEO MD Aaron, Youth Menswear, 15+ Retail Stores, 22000 sq ft branches, 10000 sq ft Chennai DC, Wholesale Menswear, Worldwide Sourcing, Pan-India Sourcing, Tamil Nadu, Andhra Pradesh, 33CTEPA7543P2ZF">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/aaron_logo_gold.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- AOS Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cKYeNTnS6v3i4t4H2mB79S+6L2A/hN2fJcZ7jX+tJ0q/2yM8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS v3 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cinzel', 'Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            gold: {
+              300: '#FDE68A',
+              400: '#F59E0B',
+              500: '#D4AF37',
+              600: '#B89225',
+              700: '#9A7B1C',
+              light: '#F7D070',
+              accent: '#E2B857',
+            },
+            slate: {
+              950: '#06090F',
+              900: '#0E1420',
+              850: '#141C2C',
+              800: '#1D283A',
+            }
+          },
+          backgroundImage: {
+            'gradient-gold': 'linear-gradient(135deg, #F7D070 0%, #D4AF37 50%, #9A7B1C 100%)',
+            'gradient-gold-dark': 'linear-gradient(135deg, #D4AF37 0%, #9A7B1C 100%)',
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            'glass-card': 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%)',
+          },
+          boxShadow: {
+            'gold-glow': '0 0 35px -5px rgba(212, 175, 55, 0.45)',
+            'gold-lg': '0 15px 50px -10px rgba(212, 175, 55, 0.5)',
+            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.4)',
+            '3d': '0 20px 40px -15px rgba(0,0,0,0.8), 0 0 20px 0 rgba(212, 175, 55, 0.2)',
+            'wa-glow': '0 10px 30px rgba(37, 211, 102, 0.4)',
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 5s ease-in-out infinite',
+            'spin-slow': 'spin 15s linear infinite',
+            'bounce-slow': 'bounce 3s infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-12px) rotate(1.5deg)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #06090F; }
+    ::-webkit-scrollbar-thumb { background: #232E45; border-radius: 5px; border: 2px solid #06090F; }
+    ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #FFF0B3 0%, #F7D070 30%, #D4AF37 70%, #9A7B1C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tilt-3d-card {
+      transform-style: preserve-3d;
+      transition: transform 0.1s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+      will-change: transform;
+    }
+
+    .tilt-3d-card:hover {
+      border-color: rgba(212, 175, 55, 0.6) !important;
+      box-shadow: 0 25px 50px -12px rgba(212, 175, 55, 0.35), 0 0 25px rgba(247, 208, 112, 0.25);
+    }
+
+    .glass-border-3d {
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      background: linear-gradient(145deg, rgba(14, 20, 32, 0.85) 0%, rgba(6, 9, 15, 0.95) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .logo-gold-glow {
+      filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.75));
+    }
+
+    /* ==========================================================
+       LUXURY CAPSULE NAVBAR & ELEGANT BUTTONS
+       ========================================================== */
+    .nav-capsule {
+      background: rgba(14, 20, 32, 0.85);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .nav-capsule-item {
+      position: relative;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .nav-capsule-item:hover {
+      color: #F59E0B;
+      background: rgba(212, 175, 55, 0.12);
+    }
+    .nav-capsule-item.active-pill {
+      background: linear-gradient(135deg, #F59E0B 0%, #D4AF37 100%);
+      color: #06090F !important;
+      font-weight: 800;
+      box-shadow: 0 2px 10px rgba(212, 175, 55, 0.35);
+    }
+    .nav-theme-btn {
+      background: rgba(14, 20, 32, 0.9);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+    }
+    .nav-theme-btn:hover {
+      border-color: #F59E0B;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+      transform: translateY(-1px);
+    }
+    .luxury-nav-cta {
+      background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #D4AF37 100%);
+      color: #06090F !important;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .luxury-nav-cta:hover {
+      box-shadow: 0 6px 25px rgba(245, 158, 11, 0.55);
+      transform: translateY(-1.5px) scale(1.02);
+    }
+    .luxury-wa-btn {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34D399;
+      transition: all 0.3s ease;
+    }
+    .luxury-wa-btn:hover {
+      background: #10B981;
+      color: #06090F !important;
+      border-color: #10B981;
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+      transform: translateY(-1px) scale(1.05);
+    }
+
+    /* ==========================================================
+       ROYAL WHITE & GOLD LUXURY THEME SYSTEM (WHITE THEME)
+       ========================================================== */
+    html {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    html.light {
+      color-scheme: light;
+    }
+
+    /* Base Body and Text */
+    html.light body {
+      background-color: #F8FAFC !important;
+      color: #1E293B !important;
+    }
+
+    /* Light Scrollbar */
+    html.light ::-webkit-scrollbar-track {
+      background: #F1F5F9;
+    }
+    html.light ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border: 2px solid #F1F5F9;
+    }
+    html.light ::-webkit-scrollbar-thumb:hover {
+      background: #D97706;
+    }
+
+    /* Light Theme Typography */
+    html.light h1,
+    html.light h2,
+    html.light h3,
+    html.light h4,
+    html.light .font-serif.text-white {
+      color: #0F172A !important;
+    }
+
+    html.light p.text-gray-300,
+    html.light p.text-gray-400,
+    html.light span.text-gray-300,
+    html.light span.text-gray-400,
+    html.light div.text-gray-300,
+    html.light div.text-gray-400 {
+      color: #475569 !important;
+    }
+
+    html.light .text-gray-200,
+    html.light .text-gray-100 {
+      color: #1E293B !important;
+    }
+
+    /* High-contrast Gold Gradient on White */
+    html.light .text-gold-gradient {
+      background: linear-gradient(135deg, #92400E 0%, #B45309 35%, #D97706 70%, #78350F 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    /* Top Announcement Bar */
+    html.light .announcement-bar {
+      background: linear-gradient(90deg, #FEF3C7 0%, #FDE68A 50%, #FEF3C7 100%) !important;
+      border-bottom: 1px solid rgba(217, 119, 6, 0.3) !important;
+      color: #78350F !important;
+    }
+    html.light .announcement-bar span,
+    html.light .announcement-bar strong {
+      color: #78350F !important;
+    }
+    html.light .announcement-bar a {
+      color: #92400E !important;
+    }
+    html.light .announcement-bar a:hover {
+      color: #78350F !important;
+    }
+
+    /* Navigation Bar */
+    html.light #navbar {
+      background-color: rgba(255, 255, 255, 0.96) !important;
+      border-bottom: 1px solid rgba(217, 119, 6, 0.22) !important;
+      box-shadow: 0 2px 12px -2px rgba(217, 119, 6, 0.1) !important;
+      transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    html.light #navbar.scrolled {
+      background-color: rgba(255, 255, 255, 0.98) !important;
+      border-bottom: 1px solid rgba(217, 119, 6, 0.3) !important;
+      box-shadow: 0 4px 20px -2px rgba(217, 119, 6, 0.18) !important;
+    }
+    html.light .nav-capsule {
+      background: rgba(255, 255, 255, 0.92) !important;
+      border: 1px solid rgba(217, 119, 6, 0.25) !important;
+      box-shadow: 0 8px 25px rgba(217, 119, 6, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+    }
+    html.light .nav-capsule-item {
+      color: #334155 !important;
+    }
+    html.light .nav-capsule-item:hover {
+      color: #92400E !important;
+      background: rgba(254, 243, 199, 0.8) !important;
+    }
+    html.light .nav-capsule-item.active-pill {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 3px 12px rgba(217, 119, 6, 0.3) !important;
+    }
+    html.light .nav-theme-btn {
+      background: #FFFFFF !important;
+      border: 1px solid rgba(217, 119, 6, 0.35) !important;
+      color: #1E293B !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+    }
+    html.light .nav-theme-btn:hover {
+      border-color: #D97706 !important;
+      box-shadow: 0 4px 15px rgba(217, 119, 6, 0.2) !important;
+    }
+    html.light .luxury-nav-cta {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 18px rgba(217, 119, 6, 0.3) !important;
+    }
+    html.light .luxury-nav-cta:hover {
+      box-shadow: 0 6px 22px rgba(217, 119, 6, 0.45) !important;
+    }
+    html.light .luxury-wa-btn {
+      background: #ECFDF5 !important;
+      border: 1px solid #A7F3D0 !important;
+      color: #059669 !important;
+    }
+    html.light .luxury-wa-btn:hover {
+      background: #059669 !important;
+      color: #FFFFFF !important;
+    }
+    html.light #navbar nav a.text-gray-300 {
+      color: #334155 !important;
+    }
+    html.light #navbar nav a:hover {
+      color: #B45309 !important;
+    }
+    html.light #navbar .nav-brand-title {
+      color: #0F172A !important;
+    }
+    html.light #navbar .nav-logo-box {
+      background-color: #FFFFFF !important;
+      border-color: rgba(217, 119, 6, 0.45) !important;
+      box-shadow: 0 4px 15px rgba(217, 119, 6, 0.18) !important;
+    }
+    html.light #mobile-menu-btn {
+      background-color: #FFFFFF !important;
+      color: #334155 !important;
+      border-color: #CBD5E1 !important;
+    }
+    html.light #mobile-menu-btn:hover {
+      color: #B45309 !important;
+      border-color: #D97706 !important;
+    }
+
+    /* Sections Backgrounds */
+    html.light section {
+      background-color: #FFFFFF !important;
+    }
+    html.light #about,
+    html.light #branches,
+    html.light #contact {
+      background-color: #F8FAFC !important;
+      border-top-color: #E2E8F0 !important;
+    }
+    html.light #leadership {
+      background-color: #FFFFFF !important;
+      border-top-color: #E2E8F0 !important;
+    }
+
+    /* 3D Glass Cards in White Theme */
+    html.light .glass-border-3d {
+      border: 1px solid rgba(217, 119, 6, 0.2) !important;
+      background: #FFFFFF !important;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.03) !important;
+    }
+    html.light .tilt-3d-card {
+      background-color: #FFFFFF !important;
+    }
+    html.light .tilt-3d-card:hover {
+      border-color: rgba(217, 119, 6, 0.55) !important;
+      box-shadow: 0 20px 40px -10px rgba(217, 119, 6, 0.18), 0 0 25px rgba(245, 158, 11, 0.12) !important;
+    }
+
+    /* Background overrides for dark utility classes in light theme */
+    html.light .bg-slate-950,
+    html.light .bg-slate-900,
+    html.light .bg-slate-850 {
+      background-color: #FFFFFF !important;
+    }
+    html.light .bg-slate-900\/90,
+    html.light .bg-slate-900\/80,
+    html.light .bg-slate-900\/60,
+    html.light .bg-slate-900\/40,
+    html.light .bg-slate-900\/95 {
+      background-color: #F8FAFC !important;
+    }
+    html.light .bg-slate-950\/90,
+    html.light .bg-slate-950\/95,
+    html.light .bg-slate-950\/80 {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+    }
+    html.light .bg-slate-800 {
+      background-color: #F1F5F9 !important;
+      color: #1E293B !important;
+      border-color: #CBD5E1 !important;
+    }
+    html.light .bg-emerald-950\/80 {
+      background-color: #ECFDF5 !important;
+      border-color: #A7F3D0 !important;
+      color: #065F46 !important;
+    }
+
+    /* Borders */
+    html.light .border-slate-800,
+    html.light .border-slate-800\/80,
+    html.light .border-slate-900 {
+      border-color: #E2E8F0 !important;
+    }
+
+    /* Hero Badges and Portrait Card */
+    html.light .hero-badge {
+      background-color: #FFFFFF !important;
+      border-color: rgba(217, 119, 6, 0.35) !important;
+      color: #92400E !important;
+      box-shadow: 0 4px 15px rgba(217, 119, 6, 0.12) !important;
+    }
+    html.light .hero-portrait-card {
+      background-color: #FFFFFF !important;
+      border-color: rgba(217, 119, 6, 0.35) !important;
+      box-shadow: 0 20px 45px -10px rgba(217, 119, 6, 0.18) !important;
+    }
+    html.light .portrait-badge-top {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      border-color: rgba(217, 119, 6, 0.4) !important;
+      color: #92400E !important;
+    }
+    html.light .portrait-badge-bottom {
+      background-color: rgba(255, 255, 255, 0.96) !important;
+      border-color: rgba(217, 119, 6, 0.35) !important;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+    }
+    html.light .portrait-badge-bottom h3 {
+      color: #0F172A !important;
+    }
+    html.light .portrait-badge-bottom p {
+      color: #475569 !important;
+    }
+    html.light .portrait-badge-bottom .gst-pill {
+      background-color: #FEF3C7 !important;
+      color: #92400E !important;
+      border-color: #FDE68A !important;
+    }
+
+    /* Stat Counters */
+    html.light .stat-counter,
+    html.light .text-amber-400 {
+      color: #B45309 !important;
+    }
+    html.light .text-amber-300 {
+      color: #92400E !important;
+    }
+    html.light .bg-amber-500\/10 {
+      background-color: #FEF3C7 !important;
+      color: #92400E !important;
+    }
+    html.light .border-amber-500\/30,
+    html.light .border-amber-500\/40 {
+      border-color: rgba(217, 119, 6, 0.3) !important;
+    }
+
+    /* Filter Buttons */
+    html.light .brand-filter-btn:not(.bg-gradient-to-r),
+    html.light .state-filter-btn:not(.bg-gradient-to-r) {
+      background-color: #FFFFFF !important;
+      color: #475569 !important;
+      border: 1px solid #CBD5E1 !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    }
+    html.light .brand-filter-btn:not(.bg-gradient-to-r):hover,
+    html.light .state-filter-btn:not(.bg-gradient-to-r):hover {
+      color: #B45309 !important;
+      border-color: #D97706 !important;
+      background-color: #FFFBEB !important;
+    }
+
+    /* Brand Cards */
+    html.light .brand-card {
+      background-color: #FFFFFF !important;
+      border: 1px solid rgba(217, 119, 6, 0.2) !important;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05) !important;
+    }
+    html.light .brand-card:hover {
+      border-color: rgba(217, 119, 6, 0.5) !important;
+      box-shadow: 0 20px 35px -5px rgba(217, 119, 6, 0.15) !important;
+    }
+    html.light .brand-card-pill {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      border-color: rgba(217, 119, 6, 0.35) !important;
+      color: #92400E !important;
+    }
+
+    /* Branch Filters & Search Bar */
+    html.light .branch-search-box {
+      background-color: #FFFFFF !important;
+      border: 1px solid rgba(217, 119, 6, 0.25) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+    }
+    html.light #branch-search,
+    html.light #branch-type-filter {
+      background-color: #F8FAFC !important;
+      color: #0F172A !important;
+      border: 1px solid #CBD5E1 !important;
+    }
+    html.light #branch-search:focus,
+    html.light #branch-type-filter:focus {
+      background-color: #FFFFFF !important;
+      border-color: #D97706 !important;
+      box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.15) !important;
+    }
+
+    /* Branch Items */
+    html.light .branch-item {
+      background-color: #FFFFFF !important;
+      border: 1px solid rgba(217, 119, 6, 0.2) !important;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04) !important;
+    }
+    html.light .branch-item:hover {
+      border-color: rgba(217, 119, 6, 0.5) !important;
+      box-shadow: 0 15px 30px rgba(217, 119, 6, 0.12) !important;
+    }
+    html.light .branch-call-btn {
+      background-color: #F1F5F9 !important;
+      color: #1E293B !important;
+      border: 1px solid #CBD5E1 !important;
+    }
+    html.light .branch-call-btn:hover {
+      background-color: #E2E8F0 !important;
+    }
+
+    /* Contact Section Cards */
+    html.light .contact-hotline-card {
+      background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 60%, #FDE68A 100%) !important;
+      border: 2px solid rgba(217, 119, 6, 0.45) !important;
+      box-shadow: 0 15px 35px rgba(217, 119, 6, 0.15) !important;
+    }
+    html.light .contact-hotline-card h2,
+    html.light .contact-hotline-card a {
+      color: #78350F !important;
+    }
+    html.light .contact-gstin-box {
+      background-color: #FFFFFF !important;
+      border: 1px solid rgba(217, 119, 6, 0.35) !important;
+      color: #78350F !important;
+    }
+    html.light .social-profiles-box {
+      background-color: #FFFFFF !important;
+      border: 1px solid #E2E8F0 !important;
+    }
+    html.light .social-profile-btn {
+      background-color: #F8FAFC !important;
+      border: 1px solid #E2E8F0 !important;
+      color: #334155 !important;
+    }
+    html.light .social-profile-btn:hover {
+      border-color: #D97706 !important;
+      color: #B45309 !important;
+      background-color: #FFFFFF !important;
+    }
+
+    /* Origin Story Metric Boxes */
+    html.light .origin-metric-box {
+      background-color: #F8FAFC !important;
+      border: 1px solid #E2E8F0 !important;
+    }
+    html.light .origin-metric-box .metric-value {
+      color: #B45309 !important;
+    }
+    html.light .origin-metric-box .metric-label {
+      color: #475569 !important;
+    }
+
+    /* Contact Form */
+    html.light #contact-form input,
+    html.light #contact-form select,
+    html.light #contact-form textarea {
+      background-color: #FFFFFF !important;
+      color: #0F172A !important;
+      border: 1px solid #CBD5E1 !important;
+    }
+    html.light #contact-form input:focus,
+    html.light #contact-form select:focus,
+    html.light #contact-form textarea:focus {
+      border-color: #D97706 !important;
+      box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.15) !important;
+    }
+
+    /* Floating WhatsApp Widget */
+    html.light #wa-tooltip {
+      background-color: rgba(255, 255, 255, 0.96) !important;
+      border-color: rgba(16, 185, 129, 0.45) !important;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12) !important;
+    }
+    html.light #wa-tooltip span.text-gray-200 {
+      color: #0F172A !important;
+    }
+    html.light #wa-tooltip-close {
+      color: #64748B !important;
+    }
+    html.light #wa-tooltip-close:hover {
+      color: #0F172A !important;
+    }
+
+    /* Modals */
+    html.light #brand-modal > div,
+    html.light #toast-modal > div {
+      background-color: #FFFFFF !important;
+      border-color: rgba(217, 119, 6, 0.35) !important;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.25) !important;
+    }
+    html.light #brand-modal #modal-description {
+      color: #334155 !important;
+    }
+    html.light #brand-modal #modal-highlights li {
+      color: #334155 !important;
+    }
+    html.light #toast-modal p.text-gray-300 {
+      color: #475569 !important;
+    }
+
+    /* Mobile Drawer */
+    html.light #mobile-menu {
+      background-color: rgba(255, 255, 255, 0.98) !important;
+      border-left: 1px solid #E2E8F0 !important;
+    }
+    html.light #mobile-menu .mobile-nav-link {
+      color: #1E293B !important;
+    }
+    html.light #mobile-menu .mobile-nav-link:hover {
+      color: #B45309 !important;
+    }
+    html.light #mobile-menu .mobile-brand-title {
+      color: #0F172A !important;
+    }
+
+    /* Footer */
+    html.light footer {
+      background-color: #F8FAFC !important;
+      border-top: 1px solid #E2E8F0 !important;
+      color: #475569 !important;
+    }
+    html.light footer h4,
+    html.light footer .footer-brand-title {
+      color: #0F172A !important;
+    }
+    html.light footer p,
+    html.light footer a {
+      color: #475569 !important;
+    }
+    html.light footer a:hover {
+      color: #B45309 !important;
+    }
+    html.light footer .footer-social-icon {
+      background-color: #FFFFFF !important;
+      border-color: #CBD5E1 !important;
+      color: #B45309 !important;
+    }
+    html.light footer .footer-social-icon:hover {
+      border-color: #B45309 !important;
+    }
+    html.light footer .border-slate-900,
+    html.light footer .border-slate-800\/80 {
+      border-color: #E2E8F0 !important;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-gray-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950 overflow-x-hidden">
+
+  <!-- ==========================================================
+       STICKY FLOATING WHATSAPP CHAT WIDGET
+       ========================================================== -->
+  <div id="wa-floating-widget" class="fixed bottom-6 right-6 z-50 flex items-center space-x-3 group">
+    
+    <div id="wa-tooltip" class="relative hidden sm:flex items-center space-x-3 bg-slate-900/95 border border-emerald-500/40 text-white px-4 py-2.5 rounded-2xl shadow-2xl backdrop-blur-md animate-float">
+      <button id="wa-tooltip-close" class="text-xs text-gray-400 hover:text-white mr-1">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="flex flex-col text-left text-xs">
+        <div class="flex items-center space-x-1.5 text-emerald-400 font-bold">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>Online Now</span>
+        </div>
+        <span class="font-semibold text-gray-200">Chat with Us on WhatsApp!</span>
+        <span class="text-[10px] text-amber-400 font-semibold">Wholesale & B2B GST Billing</span>
+      </div>
+    </div>
+
+    <a href="https://wa.me/918637476998?text=Hello%20Aaron,%20I%20am%20interested%20in%20Aaron%20Garments%20wholesale%20with%20GSTIN%2033CTEPA7543P2ZF..." target="_blank" aria-label="Chat with us on WhatsApp" class="relative w-14 h-14 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 text-white flex items-center justify-center shadow-wa-glow hover:scale-110 transition-transform duration-300">
+      <i class="fab fa-whatsapp text-3xl animate-bounce-slow"></i>
+      <span class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-amber-400 text-slate-950 text-[10px] font-black flex items-center justify-center border-2 border-slate-950">1</span>
+    </a>
+  </div>
+
+  <!-- ==========================================================
+       STICKY LUXURY HEADER (ANNOUNCEMENT + NAVBAR - ZERO OVERLAP)
+       ========================================================== -->
+  <header id="main-header" class="sticky top-0 z-50 w-full transition-all duration-300">
+    
+    <!-- Top Announcement Bar (Slim, Single-Line Responsive) -->
+    <div class="announcement-bar bg-gradient-to-r from-slate-950 via-amber-950 to-slate-950 border-b border-amber-500/20 py-1.5 px-3 sm:px-6 text-[11px] sm:text-xs font-medium text-amber-200 transition-colors duration-300">
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
+        
+        <div class="flex items-center space-x-2 truncate">
+          <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-black bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 uppercase tracking-wider shadow-sm shrink-0">Govt Regd</span>
+          <span class="truncate">🛡️ <strong>Aaron Garments</strong> • Founder, CEO & MD Aaron • 10,000 Sq. Ft. Chennai DC • 15+ Stores (22k+ Sq. Ft. Across TN & AP) • Worldwide Sourcing</span>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-3 text-xs shrink-0">
+          <span class="text-[11px] text-gray-400 font-semibold">Hotline:</span>
+          <a href="tel:8637476998" class="text-amber-400 font-bold hover:text-amber-300 transition-colors">8637476998</a>
+          <span class="text-amber-500/40">•</span>
+          <div class="flex items-center space-x-2.5 text-xs text-amber-400">
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="hover:text-amber-300"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:text-amber-300"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://youtube.com" target="_blank" aria-label="YouTube" class="hover:text-amber-300"><i class="fab fa-youtube"></i></a>
+            <a href="https://chat.whatsapp.com/CjsuRAf3g1EHUbzMVU4VpE" target="_blank" aria-label="WhatsApp Group" class="text-emerald-400 hover:text-emerald-300"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div id="navbar" class="bg-slate-950/95 backdrop-blur-xl border-b border-amber-500/20 px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 transition-all duration-300">
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
+        
+        <!-- Authentic Bright Gold Logo & Brand Title -->
+        <a href="#" class="flex items-center space-x-2 sm:space-x-3 group shrink-0 min-w-0">
+          <div class="nav-logo-box relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-slate-900 border-2 border-amber-500/60 p-1 shadow-gold-glow group-hover:scale-105 group-hover:border-amber-400 transition-all duration-300 shrink-0 flex items-center justify-center">
+            <img src="./assets/images/aaron_logo_gold.png" alt="Aaron Garments Gold Logo" class="w-full h-full object-contain logo-gold-glow">
+          </div>
+          <div class="flex flex-col min-w-0">
+            <div class="flex items-center space-x-1">
+              <span class="nav-brand-title font-serif text-lg sm:text-2xl font-black tracking-wider text-white group-hover:text-amber-400 transition-colors leading-none truncate">
+                AARON
+              </span>
+              <span class="text-amber-400 font-serif font-black text-lg sm:text-2xl leading-none">.</span>
+            </div>
+            <span class="nav-brand-sub text-[8px] sm:text-[9.5px] font-extrabold tracking-wider sm:tracking-[0.18em] text-amber-400/90 uppercase mt-0.5 truncate">
+              YOUTH MENSWEAR & RETAIL NETWORK
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links (Luxury Frosted Capsule) -->
+        <nav class="hidden xl:flex items-center space-x-1 p-1 rounded-full nav-capsule">
+          <a href="#journey" class="nav-capsule-item px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide text-gray-300 hover:text-amber-400">Aaron's Story</a>
+          <a href="#pillars" class="nav-capsule-item px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide text-amber-400 flex items-center"><i class="fas fa-sparkles text-[10px] mr-1.5 text-amber-400"></i> What Drives Us</a>
+          <a href="#growth" class="nav-capsule-item px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide text-gray-300 hover:text-amber-400">Growth Drivers</a>
+          <a href="#branches" class="nav-capsule-item px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide text-gray-300 hover:text-amber-400">15+ Stores & DC</a>
+          <a href="#leadership" class="nav-capsule-item px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide text-gray-300 hover:text-amber-400">Aaron (CEO & MD)</a>
+          <a href="#contact" class="nav-capsule-item px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide text-gray-300 hover:text-amber-400">Contact Desk</a>
+        </nav>
+
+        <!-- Right Action Buttons Cluster -->
+        <div class="flex items-center space-x-1.5 sm:space-x-3 shrink-0">
+          
+          <!-- Theme Switcher Button -->
+          <button id="theme-toggle-btn" class="nav-theme-btn w-9 h-9 sm:w-auto sm:px-3.5 sm:py-2 rounded-full text-xs font-bold flex items-center justify-center space-x-2 transition-all duration-300 focus:outline-none" aria-label="Toggle White and Dark Theme">
+            <span class="w-5 h-5 rounded-full bg-amber-500/20 flex items-center justify-center text-xs">
+              <i class="fas fa-sun text-amber-500" id="theme-toggle-icon"></i>
+            </span>
+            <span id="theme-toggle-text" class="text-xs font-bold tracking-wide hidden md:inline">White Theme</span>
+          </button>
+
+          <!-- Direct WhatsApp Quick Chat Pill (Desktop/Tablet) -->
+          <a href="https://wa.me/918637476998?text=Hello%20Aaron,%20I%20am%20interested%20in%20Aaron%20Garments..." target="_blank" class="luxury-wa-btn hidden sm:inline-flex items-center justify-center w-9 h-9 rounded-full shadow-sm" title="Chat on WhatsApp" aria-label="Chat with Aaron on WhatsApp">
+            <i class="fab fa-whatsapp text-base"></i>
+          </a>
+
+          <!-- Direct Call Button CTA -->
+          <a href="tel:8637476998" class="luxury-nav-cta relative inline-flex items-center justify-center h-9 px-3 sm:px-4 rounded-full text-xs font-extrabold uppercase tracking-wider" aria-label="Call Hotline 8637476998">
+            <i class="fas fa-phone-alt text-[11px] sm:mr-1.5"></i>
+            <span class="hidden sm:inline">8637476998</span>
+          </a>
+
+          <!-- Mobile Hamburger Button -->
+          <button id="mobile-menu-btn" class="xl:hidden w-9 h-9 rounded-full text-gray-300 hover:text-amber-400 focus:outline-none bg-slate-900/90 border border-slate-800 flex items-center justify-center transition-colors shadow-sm" aria-label="Open Navigation Menu">
+            <i class="fas fa-bars text-sm"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 bg-slate-950/98 backdrop-blur-xl translate-x-full transition-transform duration-300 flex flex-col justify-between p-6 sm:p-8 overflow-y-auto max-h-screen">
+    <div class="space-y-6">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-slate-900 border border-amber-500/50 p-1 flex items-center justify-center">
+            <img src="./assets/images/aaron_logo_gold.png" alt="Aaron Garments Logo" class="w-full h-full object-contain logo-gold-glow">
+          </div>
+          <span class="mobile-brand-title font-serif text-lg sm:text-xl font-bold tracking-wider text-white">AARON GARMENTS</span>
+        </div>
+        <button id="mobile-menu-close" class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 text-gray-400 hover:text-amber-400 flex items-center justify-center text-lg" aria-label="Close Mobile Menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Theme Switcher Bar -->
+      <div class="p-3 rounded-2xl border border-slate-800 bg-slate-900/60 flex items-center justify-between" id="mobile-theme-box">
+        <span class="text-xs font-bold uppercase tracking-wider flex items-center space-x-2 text-gray-300">
+          <i class="fas fa-palette text-amber-400"></i>
+          <span>Theme Mode</span>
+        </span>
+        <button id="mobile-theme-toggle-btn" class="px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center space-x-2 border border-amber-300 bg-white text-slate-800 shadow-sm transition-all">
+          <i class="fas fa-sun text-amber-500"></i>
+          <span id="mobile-theme-toggle-text">White Theme</span>
+        </button>
+      </div>
+
+      <nav class="flex flex-col space-y-2.5">
+        <a href="#journey" class="mobile-nav-link p-3 rounded-xl bg-slate-900/50 hover:bg-amber-500/10 border border-slate-800/80 text-sm font-semibold text-gray-200 hover:text-amber-400 flex items-center justify-between transition-colors">
+          <span>Aaron's Story: 65 Sq. Ft. to 15+ Stores</span>
+          <i class="fas fa-chevron-right text-xs text-amber-500/50"></i>
+        </a>
+        <a href="#pillars" class="mobile-nav-link p-3 rounded-xl bg-slate-900/50 hover:bg-amber-500/10 border border-slate-800/80 text-sm font-semibold text-amber-400 flex items-center justify-between transition-colors">
+          <span>What Drives Us (3 Pillars)</span>
+          <i class="fas fa-chevron-right text-xs text-amber-400"></i>
+        </a>
+        <a href="#growth" class="mobile-nav-link p-3 rounded-xl bg-slate-900/50 hover:bg-amber-500/10 border border-slate-800/80 text-sm font-semibold text-gray-200 hover:text-amber-400 flex items-center justify-between transition-colors">
+          <span>What Drove 10-Year Growth</span>
+          <i class="fas fa-chevron-right text-xs text-amber-500/50"></i>
+        </a>
+        <a href="#branches" class="mobile-nav-link p-3 rounded-xl bg-slate-900/50 hover:bg-amber-500/10 border border-slate-800/80 text-sm font-semibold text-gray-200 hover:text-amber-400 flex items-center justify-between transition-colors">
+          <span>15+ Stores & Chennai DC Hub</span>
+          <i class="fas fa-chevron-right text-xs text-amber-500/50"></i>
+        </a>
+        <a href="#leadership" class="mobile-nav-link p-3 rounded-xl bg-slate-900/50 hover:bg-amber-500/10 border border-slate-800/80 text-sm font-semibold text-gray-200 hover:text-amber-400 flex items-center justify-between transition-colors">
+          <span>Aaron - Founder, CEO & MD</span>
+          <i class="fas fa-chevron-right text-xs text-amber-500/50"></i>
+        </a>
+        <a href="#contact" class="mobile-nav-link p-3 rounded-xl bg-slate-900/50 hover:bg-amber-500/10 border border-slate-800/80 text-sm font-semibold text-gray-200 hover:text-amber-400 flex items-center justify-between transition-colors">
+          <span>Contact Wholesale & Retail Desk</span>
+          <i class="fas fa-chevron-right text-xs text-amber-500/50"></i>
+        </a>
+      </nav>
+    </div>
+
+    <div class="border-t border-slate-800 pt-5 mt-6 space-y-4">
+      <div class="flex items-center justify-center space-x-5 text-xl text-amber-400 pb-1">
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/918637476998" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp text-emerald-400"></i></a>
+      </div>
+      <a href="tel:8637476998" class="flex items-center justify-center space-x-3 w-full py-3 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 font-bold shadow-gold-glow text-sm">
+        <i class="fas fa-phone-alt"></i>
+        <span>Call Hotline: 8637476998</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ==========================================================
+       HERO SECTION WITH REAL OWNER PORTRAIT & GSTIN BADGE
+       ========================================================== -->
+  <section class="relative pt-6 sm:pt-10 pb-16 lg:pt-14 lg:pb-20 overflow-hidden bg-slate-950">
+    
+    <canvas id="gold-canvas" class="absolute inset-0 pointer-events-none z-0 opacity-50"></canvas>
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-amber-500/15 blur-[160px] rounded-full pointer-events-none animate-pulse-slow"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left" data-aos="fade-right" data-aos-duration="1000">
+          
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
+            <div class="hero-badge inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-slate-900/90 border border-amber-500/40 text-amber-300 text-xs sm:text-sm font-bold tracking-wide shadow-gold-glow animate-float transition-all duration-300 max-w-full text-center">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping shrink-0"></span>
+              <i class="fas fa-crown text-amber-400 shrink-0"></i>
+              <span class="truncate sm:whitespace-normal">Aaron Garments • Youth-Driven Menswear & Retail Network</span>
+            </div>
+
+            <div class="hero-badge inline-flex items-center space-x-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-bold shadow-md transition-all duration-300">
+              <i class="fas fa-sparkles text-emerald-400"></i>
+              <span>22,000+ Sq. Ft. Branches • 10,000 Sq. Ft. Chennai DC</span>
+            </div>
+          </div>
+
+          <h1 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight">
+            Meet <span class="text-gold-gradient">Aaron</span> — Founder, CEO & MD of Aaron Garments.
+          </h1>
+
+          <p class="text-gray-300 text-sm sm:text-lg font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            From a hospital career and a tiny 60–65 sq. ft. room in Chennai to a thriving 15+ store menswear network spanning <strong>22,000+ sq. ft.</strong> and a <strong>10,000 sq. ft. Central DC</strong>—Aaron, a BSc Nursing graduate, applied healthcare discipline to build <strong>Aaron Garments</strong>.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 pt-2">
+            <div class="glass-border-3d p-3 sm:p-3.5 rounded-2xl text-center lg:text-left transform hover:-translate-y-1 transition-transform">
+              <div class="font-serif text-xl sm:text-3xl font-extrabold text-amber-400 stat-counter" data-target="22" data-suffix="k+ Sq. Ft.">0+</div>
+              <div class="text-[10px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-wider mt-1">15+ Branches (TN & AP)</div>
+            </div>
+            <div class="glass-border-3d p-3 sm:p-3.5 rounded-2xl text-center lg:text-left transform hover:-translate-y-1 transition-transform">
+              <div class="font-serif text-xl sm:text-3xl font-extrabold text-amber-400 stat-counter" data-target="10" data-suffix="k Sq. Ft.">0k Sq. Ft.</div>
+              <div class="text-[10px] sm:text-[11px] font-bold text-emerald-400 uppercase tracking-wider mt-1">Chennai Central DC</div>
+            </div>
+            <div class="glass-border-3d p-3 sm:p-3.5 rounded-2xl text-center lg:text-left transform hover:-translate-y-1 transition-transform">
+              <div class="font-serif text-lg sm:text-2xl font-extrabold text-amber-300">10 Years</div>
+              <div class="text-[10px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-wider mt-1">From 65 Sq. Ft. Room</div>
+            </div>
+            <div class="glass-border-3d p-3 sm:p-3.5 rounded-2xl text-center lg:text-left transform hover:-translate-y-1 transition-transform">
+              <div class="font-serif text-lg sm:text-2xl font-extrabold text-amber-400">Worldwide</div>
+              <div class="text-[10px] sm:text-[11px] font-bold text-gray-400 uppercase tracking-wider mt-1">Pan-India & Global Sourcing</div>
+            </div>
+          </div>
+
+          <div class="space-y-4 pt-1">
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4">
+              <a href="#journey" class="w-full sm:w-auto px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-600 text-slate-950 font-bold text-xs uppercase tracking-wider shadow-gold-lg hover:shadow-gold-glow hover:scale-105 transition-all text-center flex items-center justify-center space-x-2">
+                <span>The Story of Aaron: 65 Sq. Ft. to 15+ Stores</span>
+                <i class="fas fa-arrow-down"></i>
+              </a>
+              
+              <a href="https://wa.me/918637476998?text=Hello%20Aaron,%20I%20am%20interested%20in%20Aaron%20Garments%20wholesale%20and%20retail%20collection..." target="_blank" class="w-full sm:w-auto px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider transition-all text-center flex items-center justify-center space-x-2 shadow-lg">
+                <i class="fab fa-whatsapp text-lg"></i>
+                <span>Chat With Aaron on WhatsApp</span>
+              </a>
+            </div>
+
+            <div class="flex items-center justify-center lg:justify-start space-x-3 sm:space-x-4 pt-1 text-gray-300 text-sm font-semibold">
+              <span class="text-xs text-amber-400 uppercase tracking-wider">Connect:</span>
+              <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-profile-btn w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 hover:border-amber-400 hover:scale-110 transition-all text-xs"><i class="fab fa-instagram"></i></a>
+              <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-profile-btn w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 hover:border-amber-400 hover:scale-110 transition-all text-xs"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://youtube.com" target="_blank" aria-label="YouTube" class="social-profile-btn w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 hover:border-amber-400 hover:scale-110 transition-all text-xs"><i class="fab fa-youtube"></i></a>
+              <a href="https://chat.whatsapp.com/CjsuRAf3g1EHUbzMVU4VpE" target="_blank" aria-label="WhatsApp Group" class="social-profile-btn w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-emerald-400 hover:border-emerald-400 hover:scale-110 transition-all text-xs"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-profile-btn w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 hover:border-amber-400 hover:scale-110 transition-all text-xs"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Hero: Real Owner Portrait of Aaron -->
+        <div class="lg:col-span-5 relative flex justify-center items-center mt-6 lg:mt-0" data-aos="fade-left" data-aos-duration="1000">
+          
+          <div class="ambient-glow absolute -inset-4 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-3xl opacity-25 blur-2xl animate-pulse-slow"></div>
+
+          <div class="hero-portrait-card tilt-3d-card relative w-full max-w-xs sm:max-w-md bg-slate-900 p-2.5 sm:p-3.5 rounded-3xl border border-amber-500/40 shadow-3d backdrop-blur-xl group transition-all duration-300">
+            
+            <div class="relative rounded-2xl overflow-hidden aspect-[3/4] bg-slate-950">
+              <img src="./assets/images/aaron_portrait.png" alt="Aaron Real Owner Portrait" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+              
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-75"></div>
+
+              <div class="portrait-badge-top depth-3d-layer absolute top-2.5 sm:top-3.5 left-2.5 sm:left-3.5 bg-slate-950/95 backdrop-blur-md px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl border-2 border-amber-500/60 text-xs font-bold text-amber-300 flex items-center space-x-2 shadow-gold-glow" data-depth="40">
+                <img src="./assets/images/aaron_logo_gold.png" alt="Aaron Garments Logo" class="w-4 h-4 sm:w-5 sm:h-5 object-contain logo-gold-glow">
+                <span class="font-serif tracking-wider font-bold text-[11px] sm:text-xs">Aaron • CEO & MD</span>
+              </div>
+
+              <div class="portrait-badge-bottom depth-3d-layer absolute bottom-2 sm:bottom-3.5 left-2 sm:left-3.5 right-2 sm:right-3.5 p-2.5 sm:p-3.5 rounded-xl bg-slate-950/95 backdrop-blur-md border border-amber-500/40 space-y-1 shadow-2xl transition-colors duration-300" data-depth="50">
+                <div class="flex items-center justify-between">
+                  <h3 class="font-serif text-base sm:text-lg font-bold text-white">Aaron</h3>
+                  <span class="text-[9px] sm:text-[10px] text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">Founder, CEO & MD</span>
+                </div>
+                <p class="text-[10px] sm:text-[11px] text-gray-300">Aaron Garments • 22k+ Sq. Ft. Branches • 10k Sq. Ft. DC</p>
+                <div class="flex flex-col space-y-1 pt-1 text-[10px] sm:text-[11px] text-amber-400 font-semibold">
+                  <div class="flex items-center justify-between text-[9px] sm:text-[11px]">
+                    <span><i class="fas fa-store mr-1"></i> 22k+ Sq. Ft.</span>
+                    <span><i class="fas fa-warehouse mr-1"></i> 10k Sq. Ft. DC</span>
+                    <span><i class="fas fa-globe mr-1"></i> Worldwide</span>
+                  </div>
+                  <div class="gst-pill text-[9px] sm:text-[10px] font-mono text-amber-300 bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/20 text-center mt-0.5">
+                    GSTIN: 33CTEPA7543P2ZF • TN & AP Network
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       FROM A HOSPITAL WARD TO 15+ STORES: THE STORY OF AARON
+       ========================================================== -->
+  <section id="journey" class="py-24 bg-slate-900/60 relative border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
+      
+      <!-- Section Story Narrative Header -->
+      <div class="text-center max-w-4xl mx-auto space-y-5" data-aos="fade-up">
+        <div class="inline-flex items-center space-x-2 text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-500/10 px-4 py-1.5 rounded-full border border-amber-500/30">
+          <i class="fas fa-stethoscope"></i>
+          <span>Healthcare Discipline to Retail Powerhouse</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          From a Hospital Ward to a <span class="text-gold-gradient">15+ Store Menswear Brand</span>
+        </h2>
+        <p class="text-amber-400 text-sm sm:text-base font-semibold uppercase tracking-wider">
+          The Story of Aaron — Founder, CEO & MD of Aaron Garments
+        </p>
+      </div>
+
+      <!-- Feature Origin Story Showcase Card -->
+      <div class="tilt-3d-card glass-border-3d rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl" data-aos="fade-up">
+        
+        <div class="absolute -top-24 -right-24 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-8 space-y-6">
+            <div class="flex items-center space-x-2 text-xs font-bold text-amber-400 uppercase tracking-widest">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+              <span>Our True Origin • From 60–65 Sq. Ft. to Regional Powerhouse</span>
+            </div>
+
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white leading-snug">
+              "Most people stay in the lane they studied for. Aaron, a BSc Nursing graduate, traded a steady hospital career for his true passion—men’s fashion—starting out of a tiny 60–65 sq. ft. room in Chennai."
+            </h3>
+
+            <div class="space-y-4 text-gray-300 text-sm sm:text-base leading-relaxed">
+              <p>
+                Armed with the discipline and care he learned in healthcare, Aaron mastered retail from the ground up: knowing every customer, curating trend-forward styles early, and making every square foot count.
+              </p>
+              <p>
+                Over the last decade, that single room has grown into <strong>Aaron Garments</strong>—a thriving network of <strong>15+ retail stores spanning 22,000+ sq. ft. across Tamil Nadu and Andhra Pradesh</strong>, backed by a massive <strong>10,000 sq. ft. Central Distribution Centre (DC)</strong>, corporate office, and wholesale hub in Chennai.
+              </p>
+              <p class="text-amber-300 font-semibold">
+                Today, we continue to grow on three simple pillars: sharp fashion forecasting, strong worldwide & pan-India sourcing, and empowering our store teams to deliver the best in modern menswear.
+              </p>
+            </div>
+          </div>
+
+          <!-- Highlight Metric Badges Side Grid -->
+          <div class="lg:col-span-4 flex flex-col gap-4">
+            
+            <div class="origin-metric-box p-4 sm:p-5 rounded-2xl bg-slate-950/80 border border-amber-500/30 flex items-center space-x-4 shadow-sm">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 text-xl font-bold shrink-0 shadow-gold-glow">
+                <i class="fas fa-door-open"></i>
+              </div>
+              <div>
+                <div class="metric-value font-serif text-xl font-black text-amber-400">60–65 Sq. Ft.</div>
+                <div class="metric-label text-[11px] font-semibold text-gray-400">Initial Chennai Room</div>
+              </div>
+            </div>
+
+            <div class="origin-metric-box p-4 sm:p-5 rounded-2xl bg-slate-950/80 border border-amber-500/30 flex items-center space-x-4 shadow-sm">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 text-xl font-bold shrink-0 shadow-gold-glow">
+                <i class="fas fa-user-nurse"></i>
+              </div>
+              <div>
+                <div class="metric-value font-serif text-xl font-black text-amber-400">BSc Nursing</div>
+                <div class="metric-label text-[11px] font-semibold text-gray-400">Healthcare Discipline in Retail</div>
+              </div>
+            </div>
+
+            <div class="origin-metric-box p-4 sm:p-5 rounded-2xl bg-slate-950/80 border border-amber-500/30 flex items-center space-x-4 shadow-sm">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 text-xl font-bold shrink-0 shadow-gold-glow">
+                <i class="fas fa-store"></i>
+              </div>
+              <div>
+                <div class="metric-value font-serif text-xl font-black text-amber-400">22,000+ Sq. Ft.</div>
+                <div class="metric-label text-[11px] font-semibold text-gray-400">Across 15+ Retail Branches</div>
+              </div>
+            </div>
+
+            <div class="origin-metric-box p-4 sm:p-5 rounded-2xl bg-slate-950/80 border border-amber-500/30 flex items-center space-x-4 shadow-sm">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 text-xl font-bold shrink-0 shadow-gold-glow">
+                <i class="fas fa-warehouse"></i>
+              </div>
+              <div>
+                <div class="metric-value font-serif text-xl font-black text-amber-400">10,000 Sq. Ft.</div>
+                <div class="metric-label text-[11px] font-semibold text-gray-400">Chennai Central DC Hub</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Scannable Highlights (What Drives Us: Three Simple Pillars) -->
+      <div id="pillars" class="pt-6">
+        <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+          <div class="inline-flex items-center space-x-2 text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-500/10 px-4 py-1.5 rounded-full border border-amber-500/30">
+            <i class="fas fa-layer-group"></i>
+            <span>Our Story: From 65 Sq. Ft. to 15+ Stores</span>
+          </div>
+          <h3 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+            What Drives Us: <span class="text-gold-gradient">Three Simple Pillars</span>
+          </h3>
+          <p class="text-gray-300 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+            Founded by Aaron—a BSc Nursing graduate who left a hospital career to follow his passion for menswear—Aaron Garments began in a modest 60–65 sq. ft. room in Chennai. Applying the discipline and customer care of healthcare to retail, Aaron turned a single compact space into a 15+ store menswear network spanning 22,000+ sq. ft. across Tamil Nadu and Andhra Pradesh over the past 10 years, backed by our 10,000 sq. ft. Central Distribution Centre in Chennai.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Pillar 1 -->
+          <div class="tilt-3d-card glass-border-3d rounded-2xl p-8 space-y-4 flex flex-col justify-between hover:border-amber-400/60 transition-all shadow-lg" data-aos="fade-up" data-aos-delay="100">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="depth-3d-layer w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 text-2xl font-bold shadow-gold-glow" data-depth="30">
+                  <i class="fas fa-binoculars"></i>
+                </div>
+                <span class="text-[10px] font-black uppercase tracking-widest text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30">Pillar 01</span>
+              </div>
+              <h4 class="depth-3d-layer font-serif text-xl font-bold text-white" data-depth="20">Early Fashion Forecasting</h4>
+              <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                Spotting upcoming youth trends ahead of the curve through continuous market research and worldwide & pan-India sourcing.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-2 text-[11px] font-semibold text-amber-300">
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">Trend Forecasting</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">Market Research</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">Worldwide Sourcing</span>
+            </div>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="tilt-3d-card glass-border-3d rounded-2xl p-8 space-y-4 flex flex-col justify-between hover:border-amber-400/60 transition-all shadow-lg" data-aos="fade-up" data-aos-delay="200">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="depth-3d-layer w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 text-2xl font-bold shadow-gold-glow" data-depth="30">
+                  <i class="fas fa-cubes-stacked"></i>
+                </div>
+                <span class="text-[10px] font-black uppercase tracking-widest text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30">Pillar 02</span>
+              </div>
+              <h4 class="depth-3d-layer font-serif text-xl font-bold text-white" data-depth="20">Built from the Ground Up</h4>
+              <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                Operating through 15+ retail outlets (spanning 22,000+ sq. ft.) supported by our 10,000 sq. ft. Chennai corporate office, Distribution Centre, and wholesale hub.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-2 text-[11px] font-semibold text-amber-300">
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">22,000+ Sq. Ft. Outlets</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">10,000 Sq. Ft. DC Hub</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">Wholesale Backbone</span>
+            </div>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="tilt-3d-card glass-border-3d rounded-2xl p-8 space-y-4 flex flex-col justify-between hover:border-amber-400/60 transition-all shadow-lg" data-aos="fade-up" data-aos-delay="300">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="depth-3d-layer w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 text-2xl font-bold shadow-gold-glow" data-depth="30">
+                  <i class="fas fa-users-gear"></i>
+                </div>
+                <span class="text-[10px] font-black uppercase tracking-widest text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30">Pillar 03</span>
+              </div>
+              <h4 class="depth-3d-layer font-serif text-xl font-bold text-white" data-depth="20">People-First Culture</h4>
+              <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                Investing in continuous training and marketing to turn our store teams into confident retail leaders.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-2 text-[11px] font-semibold text-amber-300">
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">Healthcare Care Standard</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">Continuous Training</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20">Retail Leadership</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       WHAT DROVE THIS MASSIVE 10-YEAR GROWTH SECTION
+       ========================================================== -->
+  <section id="growth" class="py-24 bg-slate-950 relative border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4" data-aos="fade-up">
+        <div class="inline-flex items-center space-x-2 text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-500/10 px-4 py-1.5 rounded-full border border-amber-500/30">
+          <i class="fas fa-rocket"></i>
+          <span>Strategic Execution Engine</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          What Drove This <span class="text-gold-gradient">Massive 10-Year Growth</span>
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+          Behind our decade-long ascent from a ground-up venture to a 15+ store network lies Aaron’s relentless discipline across four strategic growth engines.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Growth Driver 1 -->
+        <div class="tilt-3d-card glass-border-3d rounded-3xl p-8 sm:p-10 space-y-5 hover:border-amber-400/60 transition-all" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center space-x-4">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 text-2xl font-bold shadow-gold-glow shrink-0">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Growth Driver #1</span>
+              <h3 class="font-serif text-xl sm:text-2xl font-bold text-white">Relentless Market Research</h3>
+            </div>
+          </div>
+          <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+            Aaron built the brand around studying upcoming youth trends early—developing fresh, in-house menswear designs backed by worldwide & pan-India sourcing power so every store stays ahead of the curve.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-2 text-[11px] font-semibold text-amber-300">
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">Trend Forecasting</span>
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">Worldwide Sourcing</span>
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">In-House Designs</span>
+          </div>
+        </div>
+
+        <!-- Growth Driver 2 -->
+        <div class="tilt-3d-card glass-border-3d rounded-3xl p-8 sm:p-10 space-y-5 hover:border-amber-400/60 transition-all" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center space-x-4">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 text-2xl font-bold shadow-gold-glow shrink-0">
+              <i class="fas fa-bullhorn"></i>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Growth Driver #2</span>
+              <h3 class="font-serif text-xl sm:text-2xl font-bold text-white">Non-Stop Marketing & Visibility</h3>
+            </div>
+          </div>
+          <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+            From high-energy digital campaigns to on-ground local promotions, continuous marketing has kept Aaron Garments top-of-mind and consistently driven walk-ins across both states.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-2 text-[11px] font-semibold text-amber-300">
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">High-Energy Campaigns</span>
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">Local On-Ground Activations</span>
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">Walk-In Momentum</span>
+          </div>
+        </div>
+
+        <!-- Growth Driver 3 -->
+        <div class="tilt-3d-card glass-border-3d rounded-3xl p-8 sm:p-10 space-y-5 hover:border-amber-400/60 transition-all" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center space-x-4">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 text-2xl font-bold shadow-gold-glow shrink-0">
+              <i class="fas fa-users-gear"></i>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Growth Driver #3</span>
+              <h3 class="font-serif text-xl sm:text-2xl font-bold text-white">Investing in People & Staff Development</h3>
+            </div>
+          </div>
+          <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+            Aaron has always treated team growth as the real engine of retail expansion—training, mentoring, and empowering store teams and leaders to uphold high standards, strong customer conversions, and seamless operations across every branch.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-2 text-[11px] font-semibold text-amber-300">
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">Leadership Mentoring</span>
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">Customer Conversions</span>
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">Branch Excellence</span>
+          </div>
+        </div>
+
+        <!-- Growth Driver 4 -->
+        <div class="tilt-3d-card glass-border-3d rounded-3xl p-8 sm:p-10 space-y-5 hover:border-amber-400/60 transition-all" data-aos="fade-up" data-aos-delay="400">
+          <div class="flex items-center space-x-4">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 text-2xl font-bold shadow-gold-glow shrink-0">
+              <i class="fas fa-boxes-stacked"></i>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Growth Driver #4</span>
+              <h3 class="font-serif text-xl sm:text-2xl font-bold text-white">Dual Retail & Wholesale Strength</h3>
+            </div>
+          </div>
+          <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+            Pairing 15+ thriving retail branches spanning 22,000+ sq. ft. with our 10,000 sq. ft. Central Chennai DC wholesale hub gives Aaron Garments unmatched scale, faster inventory movement, and tighter control from sourcing to the sales floor.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-2 text-[11px] font-semibold text-amber-300">
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">22,000+ Sq. Ft. Branches</span>
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">10,000 Sq. Ft. Central DC</span>
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">Rapid Inventory Turnover</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       OUR CLOTHING BRANDS SECTION (SLEEK & COMPACT DESIGN)
+       ========================================================== -->
+  <section id="brands" class="py-20 relative bg-slate-950 overflow-hidden border-t border-slate-800/80">
+    
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-amber-500/10 blur-[180px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3" data-aos="fade-up">
+        <div class="inline-flex items-center space-x-2 text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/30">
+          <i class="fas fa-tshirt"></i>
+          <span>Youth-Driven Menswear & Retail Network</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">
+          Aaron Garments <span class="text-gold-gradient">Youth Collections</span>
+        </h2>
+        <p class="text-gray-300 text-xs sm:text-sm max-w-2xl mx-auto">
+          Fast-moving, youth-focused fashion designed and developed for our own 15+ stores (spanning 22,000+ sq. ft.) across Tamil Nadu & Andhra Pradesh, powered by Pan-India sourcing and our 10,000 sq. ft. Chennai Central DC.
+        </p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-2 mt-8 px-2" data-aos="fade-up">
+        <button class="brand-filter-btn active-tab px-3.5 sm:px-4 py-2 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 shadow-gold-glow transition-all" data-filter="all">
+          All Collections
+        </button>
+        <button class="brand-filter-btn px-3.5 sm:px-4 py-2 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider bg-slate-900/80 text-gray-300 border border-slate-800 hover:text-amber-400 transition-all" data-filter="garments">
+          Youth Trendwear
+        </button>
+        <button class="brand-filter-btn px-3.5 sm:px-4 py-2 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider bg-slate-900/80 text-gray-300 border border-slate-800 hover:text-amber-400 transition-all" data-filter="clubs">
+          Aaron Clubs Partywear
+        </button>
+      </div>
+
+      <!-- Compact 4-Card Luxury Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+        
+        <!-- Brand Card 1: Aaron Garments Youth Fashion -->
+        <div class="brand-card tilt-3d-card glass-border-3d rounded-2xl overflow-hidden group transition-all duration-300 shadow-3d flex flex-col justify-between" data-category="garments" data-aos="fade-up" data-aos-delay="100">
+          
+          <div class="relative h-40 overflow-hidden bg-slate-900">
+            <img src="./assets/images/aaron_garments.png" alt="Aaron Garments Youth Fashion" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            
+            <div class="absolute top-3 left-3 bg-slate-950/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-amber-500/40 text-[10px] font-bold text-amber-400 shadow-sm">
+              <i class="fas fa-check-circle mr-1"></i> Youth Menswear
+            </div>
+          </div>
+
+          <div class="p-5 space-y-3 flex-1 flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between">
+                <h3 class="font-serif text-lg font-bold text-white group-hover:text-amber-400 transition-colors">Aaron Garments</h3>
+                <span class="text-[9px] text-amber-400 font-mono font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">TRENDS</span>
+              </div>
+              <p class="text-gray-300 text-xs leading-relaxed">
+                Trendy, modern youth menswear tailored to what young buyers want next—high-speed style turnover & premium combed cottons.
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between">
+              <a href="#" class="open-brand-modal text-amber-400 hover:text-amber-300 text-[11px] font-bold uppercase tracking-wider flex items-center space-x-1" data-brand-key="garments">
+                <span>Details</span>
+                <i class="fas fa-chevron-right text-[9px]"></i>
+              </a>
+              <a href="https://wa.me/918637476998?text=Hello%20Aaron,%20I%20am%20interested%20in%20Aaron%20Garments%20youth%20menswear..." target="_blank" class="text-[11px] text-emerald-400 hover:underline font-bold flex items-center space-x-1">
+                <i class="fab fa-whatsapp"></i>
+                <span>Order</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brand Card 2: Aaron Clubs -->
+        <div class="brand-card tilt-3d-card glass-border-3d rounded-2xl overflow-hidden group transition-all duration-300 shadow-3d flex flex-col justify-between" data-category="clubs" data-aos="fade-up" data-aos-delay="200">
+          
+          <div class="relative h-40 overflow-hidden bg-slate-900">
+            <img src="./assets/images/aaron_clubs.png" alt="Aaron Clubs Partywear" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            
+            <div class="absolute top-3 left-3 bg-slate-950/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-amber-500/40 text-[10px] font-bold text-amber-400 shadow-sm">
+              <i class="fas fa-sparkles mr-1"></i> Partywear
+            </div>
+          </div>
+
+          <div class="p-5 space-y-3 flex-1 flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between">
+                <h3 class="font-serif text-lg font-bold text-white group-hover:text-amber-400 transition-colors">Aaron Clubs</h3>
+                <span class="text-[9px] text-amber-400 font-mono font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">CLUBWEAR</span>
+              </div>
+              <p class="text-gray-300 text-xs leading-relaxed">
+                High-style printed party shirts, designer stretch denims, and youth casual jackets driving non-stop store buzz.
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between">
+              <a href="#" class="open-brand-modal text-amber-400 hover:text-amber-300 text-[11px] font-bold uppercase tracking-wider flex items-center space-x-1" data-brand-key="clubs">
+                <span>Details</span>
+                <i class="fas fa-chevron-right text-[9px]"></i>
+              </a>
+              <a href="https://wa.me/918637476998?text=Hello%20Aaron,%20I%20am%20interested%20in%20Aaron%20Clubs%20partywear..." target="_blank" class="text-[11px] text-emerald-400 hover:underline font-bold flex items-center space-x-1">
+                <i class="fab fa-whatsapp"></i>
+                <span>Order</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brand Card 3: Aaron Smart Classics -->
+        <div class="brand-card tilt-3d-card glass-border-3d rounded-2xl overflow-hidden group transition-all duration-300 shadow-3d flex flex-col justify-between" data-category="garments" data-aos="fade-up" data-aos-delay="300">
+          
+          <div class="relative h-40 overflow-hidden bg-slate-900">
+            <img src="./assets/images/aaron_branches.png" alt="Aaron Smart Classics Collection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            
+            <div class="absolute top-3 left-3 bg-slate-950/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-amber-500/40 text-[10px] font-bold text-amber-400 shadow-sm">
+              <i class="fas fa-user-tie mr-1"></i> Pan-India Sourced
+            </div>
+          </div>
+
+          <div class="p-5 space-y-3 flex-1 flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between">
+                <h3 class="font-serif text-lg font-bold text-white group-hover:text-amber-400 transition-colors">Aaron Smart Classics</h3>
+                <span class="text-[9px] text-amber-400 font-mono font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">FORMALS</span>
+              </div>
+              <p class="text-gray-300 text-xs leading-relaxed">
+                Precision-tailored blazers, smart chinos, executive formals, and festive menswear sourced from premier Indian mills.
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between">
+              <a href="#" class="open-brand-modal text-amber-400 hover:text-amber-300 text-[11px] font-bold uppercase tracking-wider flex items-center space-x-1" data-brand-key="elite">
+                <span>Details</span>
+                <i class="fas fa-chevron-right text-[9px]"></i>
+              </a>
+              <a href="tel:8637476998" class="text-[11px] text-gray-300 hover:text-white font-bold flex items-center space-x-1">
+                <i class="fas fa-phone-alt text-amber-400"></i>
+                <span>Call</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brand Card 4: Chennai Central DC Hub -->
+        <div class="brand-card tilt-3d-card glass-border-3d rounded-2xl overflow-hidden group transition-all duration-300 shadow-3d flex flex-col justify-between" data-category="garments" data-aos="fade-up" data-aos-delay="400">
+          
+          <div class="relative h-40 overflow-hidden bg-slate-900">
+            <img src="./assets/images/aaron_branches.png" alt="10,000 Sq. Ft. Chennai Distribution Centre & Wholesale Hub" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            
+            <div class="absolute top-3 left-3 bg-slate-950/90 backdrop-blur-md px-2.5 py-1 rounded-lg border border-amber-500/40 text-[10px] font-bold text-amber-400 shadow-sm">
+              <i class="fas fa-warehouse mr-1"></i> 10k Sq. Ft. DC Hub
+            </div>
+          </div>
+
+          <div class="p-5 space-y-3 flex-1 flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between">
+                <h3 class="font-serif text-lg font-bold text-white group-hover:text-amber-400 transition-colors">Chennai Central DC</h3>
+                <span class="text-[9px] text-amber-400 font-mono font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">10,000 SQ. FT.</span>
+              </div>
+              <p class="text-gray-300 text-xs leading-relaxed">
+                10,000 sq. ft. Central Distribution Centre (DC), Corporate HQ, and dual wholesale supply backbone (GSTIN: 33CTEPA7543P2ZF).
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between">
+              <a href="#" class="open-brand-modal text-amber-400 hover:text-amber-300 text-[11px] font-bold uppercase tracking-wider flex items-center space-x-1" data-brand-key="factory">
+                <span>Details</span>
+                <i class="fas fa-chevron-right text-[9px]"></i>
+              </a>
+              <a href="tel:8637476998" class="text-[11px] text-amber-400 hover:underline font-bold flex items-center space-x-1">
+                <i class="fas fa-boxes"></i>
+                <span>Wholesale</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       15+ BRANCHES NETWORK SHOWCASE SECTION
+       ========================================================== -->
+  <section id="branches" class="py-24 bg-slate-900/40 relative border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4" data-aos="fade-up">
+        <div class="inline-flex items-center space-x-2 text-amber-400 text-xs font-bold uppercase tracking-widest">
+          <i class="fas fa-store"></i>
+          <span>15+ Retail Stores (22,000+ Sq. Ft.) & 10,000 Sq. Ft. DC Hub</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          Our <span class="text-gold-gradient">15+ Store Network (22,000+ Sq. Ft.)</span> & 10,000 Sq. Ft. Chennai DC
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base">
+          Find your nearest Aaron Garments outlet. Operating 15+ company-owned stores spanning 22,000+ sq. ft. across Tamil Nadu and Andhra Pradesh, powered by our 10,000 sq. ft. Chennai Distribution Centre and our <strong>flagship Vellore opening</strong>!
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mt-8 px-2" data-aos="fade-up">
+        <button class="state-filter-btn active-tab px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 shadow-gold-glow transition-all" data-state="all">
+          📍 All Locations & Central DC
+        </button>
+        <button class="state-filter-btn px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider bg-slate-900/80 text-gray-300 border border-slate-800 hover:text-amber-400 transition-all" data-state="AP">
+          Andhra Pradesh (AP Outlets)
+        </button>
+        <button class="state-filter-btn px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider bg-slate-900/80 text-gray-300 border border-slate-800 hover:text-amber-400 transition-all" data-state="TN">
+          Tamil Nadu (TN & Chennai DC)
+        </button>
+      </div>
+
+      <div class="branch-search-box mt-8 bg-slate-900/90 p-4 sm:p-6 rounded-2xl border border-amber-500/30 shadow-glass flex flex-col md:flex-row items-center justify-between gap-4" data-aos="fade-up">
+        
+        <div class="relative w-full md:w-96">
+          <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+          <input type="text" id="branch-search" placeholder="Search location (Vellore, Chennai, Sullurpet, Tirupati...)" class="w-full pl-11 pr-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-gray-200 focus:outline-none focus:border-amber-400 transition-colors">
+        </div>
+
+        <div class="flex items-center space-x-4 w-full md:w-auto">
+          <select id="branch-type-filter" class="w-full md:w-auto px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-gray-300 focus:outline-none focus:border-amber-400">
+            <option value="all">All Outlets & DC Hub</option>
+            <option value="garments">Retail Outlets</option>
+            <option value="factory">Chennai DC & Wholesale Hub</option>
+          </select>
+
+          <span id="visible-branch-count" class="hidden sm:inline-flex px-4 py-2 rounded-xl bg-amber-500/10 text-amber-400 text-xs font-bold border border-amber-500/30 whitespace-nowrap">
+            16 Locations Displayed
+          </span>
+        </div>
+
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        
+        <!-- TN NEW FEATURED BRANCH: Vellore (Valuru) -->
+        <div class="branch-item tilt-3d-card glass-border-3d rounded-2xl p-6 space-y-4 border-2 border-emerald-500/60 shadow-wa-glow" data-name="Vellore Branch Valuru Aaron Garments Aaron Clubs" data-city="Vellore Valuru Tamil Nadu" data-state="TN" data-type="garments" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-black px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 flex items-center">
+              <i class="fas fa-sparkles mr-1 animate-spin-slow"></i> NEW BRANCH OPENING
+            </span>
+            <span class="text-[11px] font-semibold text-amber-400">Vellore (Valuru)</span>
+          </div>
+          <div>
+            <h4 class="font-serif text-xl font-extrabold text-white">Vellore Flagship Store</h4>
+            <p class="text-xs text-gray-300 mt-1"><i class="fas fa-map-marker-alt text-emerald-400 mr-1"></i> Main Commercial Road, Near Collectorate Hub, Vellore (Valuru), TN</p>
+          </div>
+          <div class="flex gap-2 pt-2">
+            <a href="tel:8637476998" class="flex-1 py-2 rounded-lg bg-emerald-500 text-slate-950 text-xs font-bold text-center hover:bg-emerald-400 transition-colors">
+              📍 Grand Opening Info
+            </a>
+            <a href="tel:8637476998" class="flex-1 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold text-center hover:bg-slate-700 transition-colors border border-slate-700">
+              📞 8637476998
+            </a>
+          </div>
+        </div>
+
+        <!-- TN CHENNAI CENTRAL DC HUB: Distribution Centre, Corporate Office & Wholesale -->
+        <div class="branch-item tilt-3d-card glass-border-3d rounded-2xl p-6 space-y-4 border-2 border-amber-500/50 shadow-gold-glow" data-name="Chennai Central Distribution Centre DC 10000 sq ft Corporate Office Wholesale Aaron Garments 33CTEPA7543P2ZF" data-city="Chennai Wholesale Distribution Centre DC" data-state="TN" data-type="factory" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-black px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/50">
+              🏢 GSTIN: 33CTEPA7543P2ZF
+            </span>
+            <span class="text-[11px] font-bold text-amber-400">10,000 Sq. Ft. DC Hub</span>
+          </div>
+          <div>
+            <h4 class="font-serif text-xl font-extrabold text-white">Chennai Central DC & Wholesale Hub (10,000 Sq. Ft.)</h4>
+            <p class="text-xs text-gray-300 mt-1"><i class="fas fa-warehouse text-amber-400 mr-1"></i> 10,000 sq. ft. Distribution Centre (DC), Corporate HQ & Wholesale Operations Hub, Chennai, TN</p>
+          </div>
+          <div class="flex gap-2 pt-2">
+            <a href="https://wa.me/918637476998?text=Hello%20Aaron,%20I%20want%20to%20inquire%20about%20Wholesale%20Garments%20from%20Chennai%20DC..." target="_blank" class="flex-1 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold text-center hover:bg-amber-400 transition-colors">
+              📦 Wholesale Supply
+            </a>
+            <a href="tel:8637476998" class="flex-1 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold text-center hover:bg-slate-700 transition-colors border border-slate-700">
+              📞 8637476998
+            </a>
+          </div>
+        </div>
+
+        <!-- AP Branch 1: Sullurupeta -->
+        <div class="branch-item tilt-3d-card glass-border-3d rounded-2xl p-6 space-y-4 hover:border-amber-400/50 transition-all" data-name="Sullurupeta Branch Aaron Garments Aaron Clubs" data-city="Sullurpet Sullurupeta Tirupati" data-state="AP" data-type="garments" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">AP OUTLET #01</span>
+            <span class="text-[11px] font-semibold text-emerald-400 flex items-center"><i class="fas fa-circle text-[8px] mr-1"></i> Open & Active</span>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg font-bold text-white">Sullurupeta Branch</h4>
+            <p class="text-xs text-gray-300 mt-1"><i class="fas fa-map-marker-alt text-amber-400 mr-1"></i> 2-2-15, Rajeev Nagar, HDFC ATM, Sullurpet, Tirupati Dist, AP - 524121</p>
+          </div>
+          <div class="flex gap-2 pt-2">
+            <a href="https://share.google/vPUrdC2TZ68owoAqg" target="_blank" class="flex-1 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold text-center hover:bg-amber-400 transition-colors">
+              🗺️ Route Map
+            </a>
+            <a href="tel:9360792292" class="flex-1 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold text-center hover:bg-slate-700 transition-colors border border-slate-700">
+              📞 9360792292
+            </a>
+          </div>
+        </div>
+
+        <!-- AP Branch 2: Naidupeta -->
+        <div class="branch-item tilt-3d-card glass-border-3d rounded-2xl p-6 space-y-4 hover:border-amber-400/50 transition-all" data-name="Naidupeta Branch Aaron Garments Aaron Clubs" data-city="Naidupeta Nayudupet Tirupati" data-state="AP" data-type="garments" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">AP OUTLET #02</span>
+            <span class="text-[11px] font-semibold text-emerald-400 flex items-center"><i class="fas fa-circle text-[8px] mr-1"></i> Open & Active</span>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg font-bold text-white">Naidupeta Branch</h4>
+            <p class="text-xs text-gray-300 mt-1"><i class="fas fa-map-marker-alt text-amber-400 mr-1"></i> 1-1-39/1, Bharath Nagar 1, Balaji Travels, Nayudupet, AP - 524126</p>
+          </div>
+          <div class="flex gap-2 pt-2">
+            <a href="https://www.google.com/maps/search/Naidupeta+Branch+1-1-39/1+NAYUDUPET" target="_blank" class="flex-1 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold text-center hover:bg-amber-400 transition-colors">
+              🗺️ Route Map
+            </a>
+            <a href="tel:8708221762" class="flex-1 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold text-center hover:bg-slate-700 transition-colors border border-slate-700">
+              📞 8708221762
+            </a>
+          </div>
+        </div>
+
+        <!-- AP Branch 3: Tirupati -->
+        <div class="branch-item tilt-3d-card glass-border-3d rounded-2xl p-6 space-y-4 hover:border-amber-400/50 transition-all" data-name="Tirupati Branch Aaron Garments Aaron Clubs" data-city="Tirupati Vinayaka Nagar" data-state="AP" data-type="garments" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">AP OUTLET #03</span>
+            <span class="text-[11px] font-semibold text-emerald-400 flex items-center"><i class="fas fa-circle text-[8px] mr-1"></i> Open & Active</span>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg font-bold text-white">Tirupati Branch</h4>
+            <p class="text-xs text-gray-300 mt-1"><i class="fas fa-map-marker-alt text-amber-400 mr-1"></i> 13-7-796/14B, Vinayaka Nagar, Sankalpa Hospital Road, Tirupati, AP</p>
+          </div>
+          <div class="flex gap-2 pt-2">
+            <a href="https://maps.app.goo.gl/7SumhD3faHnq1Hq89" target="_blank" class="flex-1 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold text-center hover:bg-amber-400 transition-colors">
+              🗺️ Route Map
+            </a>
+            <a href="tel:7989956548" class="flex-1 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold text-center hover:bg-slate-700 transition-colors border border-slate-700">
+              📞 7989956548
+            </a>
+          </div>
+        </div>
+
+        <!-- AP Branch 4: Nellore -->
+        <div class="branch-item tilt-3d-card glass-border-3d rounded-2xl p-6 space-y-4 hover:border-amber-400/50 transition-all" data-name="Nellore Branch Aaron Garments Aaron Clubs" data-city="Nellore Savithri Nagar" data-state="AP" data-type="garments" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">AP OUTLET #04</span>
+            <span class="text-[11px] font-semibold text-emerald-400 flex items-center"><i class="fas fa-circle text-[8px] mr-1"></i> Open & Active</span>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg font-bold text-white">Nellore Branch</h4>
+            <p class="text-xs text-gray-300 mt-1"><i class="fas fa-map-marker-alt text-amber-400 mr-1"></i> 25/2/587, Savithri Nagar, Nagam Temple Road, Nellore, AP - 524004</p>
+          </div>
+          <div class="flex gap-2 pt-2">
+            <a href="https://maps.app.goo.gl/unQo6YsDCZR4bEpw6" target="_blank" class="flex-1 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold text-center hover:bg-amber-400 transition-colors">
+              🗺️ Route Map
+            </a>
+            <a href="tel:9666071778" class="flex-1 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold text-center hover:bg-slate-700 transition-colors border border-slate-700">
+              📞 9666071778
+            </a>
+          </div>
+        </div>
+
+        <!-- AP Branch 5: Srikalahasti -->
+        <div class="branch-item tilt-3d-card glass-border-3d rounded-2xl p-6 space-y-4 hover:border-amber-400/50 transition-all" data-name="Srikalahasti Branch Aaron Garments" data-city="Srikalahasti Sri Kalastri Tirupati" data-state="AP" data-type="garments" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">AP OUTLET #05</span>
+            <span class="text-[11px] font-semibold text-emerald-400 flex items-center"><i class="fas fa-circle text-[8px] mr-1"></i> Open & Active</span>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg font-bold text-white">Srikalahasti Branch</h4>
+            <p class="text-xs text-gray-300 mt-1"><i class="fas fa-map-marker-alt text-amber-400 mr-1"></i> RTC Bus Stand Opposite, Sri Kalahasti, Tirupati Dist, AP</p>
+          </div>
+          <div class="flex gap-2 pt-2">
+            <a href="https://maps.app.goo.gl/BwcNwcaAnQQcCvPx8" target="_blank" class="flex-1 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold text-center hover:bg-amber-400 transition-colors">
+              🗺️ Route Map
+            </a>
+            <a href="tel:9398833979" class="flex-1 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold text-center hover:bg-slate-700 transition-colors border border-slate-700">
+              📞 9398833979
+            </a>
+          </div>
+        </div>
+
+        <!-- AP Branch 6: Railway Koduru -->
+        <div class="branch-item tilt-3d-card glass-border-3d rounded-2xl p-6 space-y-4 hover:border-amber-400/50 transition-all" data-name="Railway Koduru Branch Aaron Garments" data-city="Koduru Railway Koduru Annamayya" data-state="AP" data-type="garments" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">AP OUTLET #06</span>
+            <span class="text-[11px] font-semibold text-emerald-400 flex items-center"><i class="fas fa-circle text-[8px] mr-1"></i> Open & Active</span>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg font-bold text-white">Railway Koduru Branch</h4>
+            <p class="text-xs text-gray-300 mt-1"><i class="fas fa-map-marker-alt text-amber-400 mr-1"></i> No. 1343, MG Road, Railway Koduru, Annamayya Dist, AP</p>
+          </div>
+          <div class="flex gap-2 pt-2">
+            <a href="https://www.google.com/maps/search/RAILWAY+KODURU+1343+MG+ROAD" target="_blank" class="flex-1 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold text-center hover:bg-amber-400 transition-colors">
+              🗺️ Route Map
+            </a>
+            <a href="tel:9000495717" class="flex-1 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold text-center hover:bg-slate-700 transition-colors border border-slate-700">
+              📞 9000495717
+            </a>
+          </div>
+        </div>
+
+        <!-- AP Branch 7: Rajampet -->
+        <div class="branch-item tilt-3d-card glass-border-3d rounded-2xl p-6 space-y-4 hover:border-amber-400/50 transition-all" data-name="Rajampet Branch Aaron Garments" data-city="Rajampet ABNR Colony" data-state="AP" data-type="garments" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">AP OUTLET #07</span>
+            <span class="text-[11px] font-semibold text-emerald-400 flex items-center"><i class="fas fa-circle text-[8px] mr-1"></i> Open & Active</span>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg font-bold text-white">Rajampet Branch</h4>
+            <p class="text-xs text-gray-300 mt-1"><i class="fas fa-map-marker-alt text-amber-400 mr-1"></i> 6/399 ABNR Colony, Naveen Chandra Complex, RS Road, Rajampet, AP</p>
+          </div>
+          <div class="flex gap-2 pt-2">
+            <a href="https://www.google.com/maps/search/RAJAMPET+6/399+ABNR+COLONY" target="_blank" class="flex-1 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold text-center hover:bg-amber-400 transition-colors">
+              🗺️ Route Map
+            </a>
+            <a href="tel:9063270776" class="flex-1 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold text-center hover:bg-slate-700 transition-colors border border-slate-700">
+              📞 9063270776
+            </a>
+          </div>
+        </div>
+
+        <!-- AP Branch 8: Kota -->
+        <div class="branch-item tilt-3d-card glass-border-3d rounded-2xl p-6 space-y-4 hover:border-amber-400/50 transition-all" data-name="Kota Branch Aaron Garments" data-city="Kota Extra Mart" data-state="AP" data-type="garments" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">AP OUTLET #08</span>
+            <span class="text-[11px] font-semibold text-emerald-400 flex items-center"><i class="fas fa-circle text-[8px] mr-1"></i> Open & Active</span>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg font-bold text-white">Kota Branch</h4>
+            <p class="text-xs text-gray-300 mt-1"><i class="fas fa-map-marker-alt text-amber-400 mr-1"></i> Extra Mart, Near Aarogya Medical, Kota, AP</p>
+          </div>
+          <div class="flex gap-2 pt-2">
+            <a href="https://maps.app.goo.gl/osBkB7aRyD4dYZrq9" target="_blank" class="flex-1 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold text-center hover:bg-amber-400 transition-colors">
+              🗺️ Route Map
+            </a>
+            <a href="tel:6304374016" class="flex-1 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold text-center hover:bg-slate-700 transition-colors border border-slate-700">
+              📞 6304374016
+            </a>
+          </div>
+        </div>
+
+        <!-- TN Branch 9: Royapuram Chennai -->
+        <div class="branch-item tilt-3d-card glass-border-3d rounded-2xl p-6 space-y-4 hover:border-amber-400/50 transition-all" data-name="Royapuram Chennai Branch Aaron Garments Aaron Clubs" data-city="Royapuram Chennai Kal Mandapam" data-state="TN" data-type="garments" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">TN OUTLET #09</span>
+            <span class="text-[11px] font-semibold text-emerald-400 flex items-center"><i class="fas fa-circle text-[8px] mr-1"></i> Open & Active</span>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg font-bold text-white">Royapuram Branch (Chennai)</h4>
+            <p class="text-xs text-gray-300 mt-1"><i class="fas fa-map-marker-alt text-amber-400 mr-1"></i> 2, 55, W Kal Mandapam Rd, Royapuram, Chennai, TN - 600013</p>
+          </div>
+          <div class="flex gap-2 pt-2">
+            <a href="https://share.google/91PjHy0dSDYkdp7Uo" target="_blank" class="flex-1 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold text-center hover:bg-amber-400 transition-colors">
+              🗺️ Route Map
+            </a>
+            <a href="tel:8667081577" class="flex-1 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold text-center hover:bg-slate-700 transition-colors border border-slate-700">
+              📞 8667081577
+            </a>
+          </div>
+        </div>
+
+        <!-- TN Branch 10: Madhar Pakkam -->
+        <div class="branch-item tilt-3d-card glass-border-3d rounded-2xl p-6 space-y-4 hover:border-amber-400/50 transition-all" data-name="Madhar Pakkam Branch Aaron Garments" data-city="Madhar Pakkam Padhirivedu" data-state="TN" data-type="garments" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">TN OUTLET #10</span>
+            <span class="text-[11px] font-semibold text-emerald-400 flex items-center"><i class="fas fa-circle text-[8px] mr-1"></i> Open & Active</span>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg font-bold text-white">Madhar Pakkam Branch</h4>
+            <p class="text-xs text-gray-300 mt-1"><i class="fas fa-map-marker-alt text-amber-400 mr-1"></i> 119, PH Rd, Padhirivedu, Madhar Pakkam, TN - 601202</p>
+          </div>
+          <div class="flex gap-2 pt-2">
+            <a href="https://share.google/PxbxX5x3VGFnMqARw" target="_blank" class="flex-1 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold text-center hover:bg-amber-400 transition-colors">
+              🗺️ Route Map
+            </a>
+            <a href="tel:9962439690" class="flex-1 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold text-center hover:bg-slate-700 transition-colors border border-slate-700">
+              📞 9962439690
+            </a>
+          </div>
+        </div>
+
+        <!-- TN Branch 11: Gummidipoondi -->
+        <div class="branch-item tilt-3d-card glass-border-3d rounded-2xl p-6 space-y-4 hover:border-amber-400/50 transition-all" data-name="Gummidipoondi Branch Aaron Garments" data-city="Gummidipoondi GNT Road" data-state="TN" data-type="garments" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">TN OUTLET #11</span>
+            <span class="text-[11px] font-semibold text-emerald-400 flex items-center"><i class="fas fa-circle text-[8px] mr-1"></i> Open & Active</span>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg font-bold text-white">Gummidipoondi Branch</h4>
+            <p class="text-xs text-gray-300 mt-1"><i class="fas fa-map-marker-alt text-amber-400 mr-1"></i> 92, GNT Road, opposite Gummidipoondi, TN - 601202</p>
+          </div>
+          <div class="flex gap-2 pt-2">
+            <a href="https://share.google/ML91Y6Py5jS8eS1rO" target="_blank" class="flex-1 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold text-center hover:bg-amber-400 transition-colors">
+              🗺️ Route Map
+            </a>
+            <a href="tel:6381144545" class="flex-1 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold text-center hover:bg-slate-700 transition-colors border border-slate-700">
+              📞 6381144545
+            </a>
+          </div>
+        </div>
+
+        <!-- TN Branch 12: Ponneri -->
+        <div class="branch-item tilt-3d-card glass-border-3d rounded-2xl p-6 space-y-4 hover:border-amber-400/50 transition-all" data-name="Ponneri Branch Aaron Garments" data-city="Ponneri" data-state="TN" data-type="garments" data-aos="fade-up">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">TN OUTLET #12</span>
+            <span class="text-[11px] font-semibold text-emerald-400 flex items-center"><i class="fas fa-circle text-[8px] mr-1"></i> Open & Active</span>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg font-bold text-white">Ponneri Branch</h4>
+            <p class="text-xs text-gray-300 mt-1"><i class="fas fa-map-marker-alt text-amber-400 mr-1"></i> High Street Commercial Arcade, Ponneri, TN</p>
+          </div>
+          <div class="flex gap-2 pt-2">
+            <a href="tel:8637476998" class="flex-1 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold text-center hover:bg-amber-400 transition-colors">
+              🗺️ Route Map
+            </a>
+            <a href="tel:8637476998" class="flex-1 py-2 rounded-lg bg-slate-800 text-white text-xs font-bold text-center hover:bg-slate-700 transition-colors border border-slate-700">
+              📞 8637476998
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       LEADERSHIP PHILOSOPHY
+       ========================================================== -->
+  <section id="leadership" class="py-24 bg-slate-950 relative border-t border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-8 text-center space-y-8" data-aos="zoom-in">
+      
+      <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-amber-400 to-amber-700 flex items-center justify-center text-slate-950 text-2xl shadow-gold-glow animate-float">
+        <i class="fas fa-quote-left"></i>
+      </div>
+
+      <blockquote class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-relaxed">
+        "Healthcare taught me that genuine care, precision, and discipline create lasting trust. We brought that exact mindset from a tiny 60–65 sq. ft. room in Chennai to build <span class="text-gold-gradient">Aaron Garments into a 15+ store menswear powerhouse spanning 22,000+ sq. ft.</span>"
+      </blockquote>
+
+      <div class="space-y-1">
+        <div class="font-serif text-xl font-bold text-amber-400">Aaron</div>
+        <div class="text-xs font-semibold uppercase tracking-widest text-gray-400">Founder, CEO & MD, Aaron Garments • BSc Nursing to Menswear Pioneer • GSTIN: 33CTEPA7543P2ZF</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       CONTACT & CONNECT SECTION WITH GSTIN DETAILS
+       ========================================================== -->
+  <section id="contact" class="py-24 bg-slate-900/80 relative border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Direct Contact Card (Left) -->
+        <div class="lg:col-span-5 space-y-8" data-aos="fade-right">
+          
+          <div class="space-y-3">
+            <div class="inline-flex items-center space-x-2 text-amber-400 text-xs font-bold uppercase tracking-widest">
+              <i class="fas fa-paper-plane"></i>
+              <span>Direct Wholesale & DC Desk</span>
+            </div>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">
+              Connect Directly With <span class="text-gold-gradient">Aaron</span>
+            </h2>
+            <p class="text-gray-300 text-sm leading-relaxed">
+              Reach out directly to Aaron (Founder, CEO & MD) for 10,000 sq. ft. Chennai DC wholesale supply, Aaron Garments retail franchise opportunities across our 22,000+ sq. ft. store network in Tamil Nadu & Andhra Pradesh, or new branch inquiries.
+            </p>
+          </div>
+
+          <!-- Highlighted Call & WhatsApp Card -->
+          <div class="contact-hotline-card tilt-3d-card p-6 rounded-2xl bg-gradient-to-br from-amber-950/80 via-slate-900 to-slate-950 border-2 border-amber-500/50 shadow-gold-lg space-y-4">
+            <div class="flex items-center space-x-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-r from-amber-400 to-yellow-500 flex items-center justify-center text-slate-950 text-2xl shadow-gold-glow animate-pulse">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-amber-400 uppercase tracking-widest">Primary Executive Hotline</div>
+                <a href="tel:8637476998" class="font-serif text-2xl sm:text-3xl font-extrabold text-white hover:text-amber-300 transition-colors">
+                  +91 8637476998
+                </a>
+              </div>
+            </div>
+
+            <!-- GSTIN Display Box -->
+            <div class="contact-gstin-box p-3.5 rounded-xl bg-slate-950 border border-amber-500/40 text-xs flex items-center justify-between">
+              <span class="text-gray-400 font-medium">Official GSTIN:</span>
+              <span class="font-mono font-bold text-amber-400 tracking-wider">33CTEPA7543P2ZF</span>
+            </div>
+
+            <p class="text-xs text-gray-300">
+              Direct line for Wholesale Garments, Chennai DC Billing & Store Orders.
+            </p>
+
+            <div class="flex gap-3 pt-1">
+              <a href="tel:8637476998" class="flex-1 py-2.5 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs uppercase tracking-wider text-center hover:bg-amber-400 transition-colors">
+                <i class="fas fa-phone-alt mr-1.5"></i> Call Now
+              </a>
+              <a href="https://wa.me/918637476998?text=Hello%20Aaron,%20I%20am%20interested%20in%20Aaron%20Garments%20wholesale%20with%20GSTIN%2033CTEPA7543P2ZF..." target="_blank" class="flex-1 py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider text-center hover:bg-emerald-500 transition-colors flex items-center justify-center shadow-md">
+                <i class="fab fa-whatsapp text-sm mr-1.5"></i> WhatsApp Chat
+              </a>
+            </div>
+          </div>
+
+          <!-- Social Media Profiles Box -->
+          <div class="social-profiles-box p-6 rounded-2xl bg-slate-950 border border-slate-800 space-y-3">
+            <div class="text-xs font-bold text-amber-400 uppercase tracking-wider">Official Social Media Profiles</div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-1">
+              <a href="https://instagram.com" target="_blank" class="social-profile-btn flex items-center space-x-2.5 p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-400 text-gray-300 hover:text-amber-400 text-xs font-semibold transition-all">
+                <i class="fab fa-instagram text-base text-pink-500"></i>
+                <span>Instagram</span>
+              </a>
+              <a href="https://facebook.com" target="_blank" class="social-profile-btn flex items-center space-x-2.5 p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-400 text-gray-300 hover:text-amber-400 text-xs font-semibold transition-all">
+                <i class="fab fa-facebook-f text-base text-blue-500"></i>
+                <span>Facebook</span>
+              </a>
+              <a href="https://youtube.com" target="_blank" class="social-profile-btn flex items-center space-x-2.5 p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-400 text-gray-300 hover:text-amber-400 text-xs font-semibold transition-all">
+                <i class="fab fa-youtube text-base text-red-500"></i>
+                <span>YouTube</span>
+              </a>
+              <a href="https://chat.whatsapp.com/CjsuRAf3g1EHUbzMVU4VpE" target="_blank" class="social-profile-btn flex items-center space-x-2.5 p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-400 text-gray-300 hover:text-emerald-400 text-xs font-semibold transition-all">
+                <i class="fab fa-whatsapp text-base text-emerald-400"></i>
+                <span>WhatsApp Group</span>
+              </a>
+              <a href="https://linkedin.com" target="_blank" class="social-profile-btn flex items-center space-x-2.5 p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-400 text-gray-300 hover:text-amber-400 text-xs font-semibold transition-all">
+                <i class="fab fa-linkedin-in text-base text-blue-400"></i>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Contact Form (Right) -->
+        <div class="lg:col-span-7" data-aos="fade-left">
+          <div class="glass-border-3d p-8 sm:p-10 rounded-3xl space-y-6">
+            
+            <div class="border-b border-slate-800 pb-4">
+              <h3 class="font-serif text-2xl font-bold text-white">Send Wholesale & Retail Inquiry</h3>
+              <p class="text-xs text-gray-400 mt-1">Fill out the form below for Aaron Garments wholesale supply, Chennai Central DC dispatch & GST billing.</p>
+            </div>
+
+            <form id="contact-form" class="space-y-5">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div class="space-y-2">
+                  <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Your Full Name *</label>
+                  <input type="text" required placeholder="e.g. Robert Vance" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-gray-100 focus:outline-none focus:border-amber-400 transition-colors">
+                </div>
+
+                <div class="space-y-2">
+                  <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Phone / Mobile Number *</label>
+                  <input type="tel" required placeholder="e.g. 9876543210" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-gray-100 focus:outline-none focus:border-amber-400 transition-colors">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div class="space-y-2">
+                  <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Email Address</label>
+                  <input type="email" placeholder="name@company.com" class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-gray-100 focus:outline-none focus:border-amber-400 transition-colors">
+                </div>
+
+                <div class="space-y-2">
+                  <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Category of Inquiry</label>
+                  <select class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-gray-300 focus:outline-none focus:border-amber-400">
+                    <option>Aaron Garments (Youth Menswear & Formals Wholesale)</option>
+                    <option>Aaron Clubs (Youth Trendwear & Partywear)</option>
+                    <option>Aaron Smart Classics (Suits, Blazers & Wedding Wear)</option>
+                    <option>Chennai Central DC (10,000 Sq. Ft.) Wholesale Distribution (GSTIN: 33CTEPA7543P2ZF)</option>
+                    <option>Retail Store Franchise & Dealership (AP & TN - 22,000+ Sq. Ft. Network)</option>
+                    <option>Vellore (Valuru) Flagship Store Inquiry</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Your Message *</label>
+                <textarea rows="4" required placeholder="Describe your wholesale garment requirements, store order quantity, or retail franchise inquiry..." class="w-full px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-gray-100 focus:outline-none focus:border-amber-400 transition-colors resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 text-slate-950 font-bold text-sm uppercase tracking-wider shadow-gold-lg hover:shadow-gold-glow transition-all">
+                Submit Inquiry to Executive Desk
+              </button>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       FOOTER WITH GSTIN DETAILS
+       ========================================================== -->
+  <footer class="bg-slate-950 border-t border-slate-800/80 pt-16 pb-12 text-gray-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-9 h-9 rounded-xl bg-slate-900 border border-amber-500/50 p-1 flex items-center justify-center">
+              <img src="./assets/images/aaron_logo_gold.png" alt="Aaron Garments Logo" class="w-full h-full object-contain logo-gold-glow">
+            </div>
+            <span class="footer-brand-title font-serif text-xl font-bold tracking-wider text-white">AARON GARMENTS</span>
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+            Led by Founder, CEO & MD Aaron, Aaron Garments is a youth-focused menswear powerhouse with 15+ stores (spanning 22,000+ sq. ft.) across Tamil Nadu & Andhra Pradesh, backed by our 10,000 sq. ft. central Chennai DC wholesale hub and Worldwide & Pan-India sourcing.
+          </p>
+          <div class="space-y-1 text-xs text-amber-400 font-semibold">
+            <div>Executive Hotline: <a href="tel:8637476998" class="underline hover:text-amber-300">8637476998</a></div>
+            <div>Govt Regd GSTIN: <span class="font-mono text-white">33CTEPA7543P2ZF</span></div>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider">Quick Links</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#journey" class="hover:text-amber-400 transition-colors">Aaron's Story (65 Sq. Ft. to 15+ Stores)</a></li>
+            <li><a href="#pillars" class="hover:text-amber-400 transition-colors">What Drives Us (3 Pillars)</a></li>
+            <li><a href="#growth" class="hover:text-amber-400 transition-colors">What Drove 10-Yr Growth</a></li>
+            <li><a href="#branches" class="hover:text-amber-400 transition-colors">15+ Stores (22k+ Sq. Ft.) & Chennai DC</a></li>
+            <li><a href="#leadership" class="hover:text-amber-400 transition-colors">Aaron (Founder, CEO & MD)</a></li>
+            <li><a href="#contact" class="hover:text-amber-400 transition-colors">Contact Wholesale & Retail Desk</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4 space-y-3">
+          <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider">Follow Aaron Garments</h4>
+          <p class="text-xs text-gray-400">
+            Connect across official social media channels & join our WhatsApp wholesale community.
+          </p>
+          <div class="flex space-x-3 pt-2">
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="footer-social-icon w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 hover:border-amber-400 hover:scale-110 transition-all"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="footer-social-icon w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 hover:border-amber-400 hover:scale-110 transition-all"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://youtube.com" target="_blank" aria-label="YouTube" class="footer-social-icon w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 hover:border-amber-400 hover:scale-110 transition-all"><i class="fab fa-youtube"></i></a>
+            <a href="https://chat.whatsapp.com/CjsuRAf3g1EHUbzMVU4VpE" target="_blank" aria-label="WhatsApp Group" class="footer-social-icon w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-emerald-400 hover:border-emerald-400 hover:scale-110 transition-all"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="footer-social-icon w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400 hover:border-amber-400 hover:scale-110 transition-all"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="border-t border-slate-900 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+        <div>&copy; 2026 AARON GARMENTS • Youth-Driven Menswear & Retail Network (22,000+ Sq. Ft. Outlets • 10,000 Sq. Ft. Chennai DC). Led by Aaron (Founder, CEO & MD). GSTIN: 33CTEPA7543P2ZF. All Rights Reserved.</div>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-amber-400">Privacy Policy</a>
+          <span>•</span>
+          <a href="#" class="hover:text-amber-400">Terms of Business</a>
+          <span>•</span>
+          <a href="tel:8637476998" class="text-amber-400 hover:underline">Phone: 8637476998</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================
+       BRAND SPECIFICATION MODAL
+       ========================================================== -->
+  <div id="brand-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative w-full max-w-2xl bg-slate-900 border border-amber-500/40 rounded-3xl shadow-2xl overflow-hidden">
+      
+      <div class="relative h-48 bg-slate-950">
+        <img id="modal-image" src="" alt="Brand Banner" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
+        
+        <button id="close-brand-modal" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-950/80 text-gray-300 hover:text-amber-400 flex items-center justify-center border border-amber-500/30">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <div class="absolute bottom-4 left-6 right-6">
+          <span id="modal-branches" class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold border border-amber-500/40 mb-1">
+            Locations
+          </span>
+          <h3 id="modal-title" class="font-serif text-2xl font-bold text-white">Brand Title</h3>
+          <p id="modal-subtitle" class="text-xs text-amber-400/90 font-medium">Brand Subtitle</p>
+        </div>
+      </div>
+
+      <div class="p-6 space-y-5">
+        <p id="modal-description" class="text-gray-300 text-sm leading-relaxed">
+          Brand description content.
+        </p>
+
+        <div class="space-y-2">
+          <h4 class="text-xs font-bold text-amber-400 uppercase tracking-wider">Key Pillars & Manufacturing Standards</h4>
+          <ul id="modal-highlights" class="space-y-2 text-xs">
+          </ul>
+        </div>
+
+        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+          <div id="modal-manager" class="text-xs font-bold text-amber-400">Direct Contact: 8637476998</div>
+          <a href="https://wa.me/918637476998?text=Hello%20Aaron,%20I%20am%20interested%20in%20Wholesale%20/%20Retail%20orders..." target="_blank" class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider hover:bg-emerald-500 transition-colors flex items-center space-x-1.5">
+            <i class="fab fa-whatsapp"></i>
+            <span>Chat WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================
+       CONTACT SUBMISSION CONFIRMATION TOAST MODAL
+       ========================================================== -->
+  <div id="toast-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative w-full max-w-md bg-slate-900 border border-amber-500/50 rounded-3xl p-8 text-center space-y-6 shadow-2xl">
+      <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 text-3xl shadow-gold-glow">
+        <i class="fas fa-check"></i>
+      </div>
+
+      <div class="space-y-2">
+        <h3 class="font-serif text-2xl font-bold text-white">Inquiry Transmitted!</h3>
+        <p class="text-gray-300 text-sm">
+          Thank you for reaching out to <strong>Aaron Garments Executive Desk</strong>. Your clothing inquiry has been logged.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-950 border border-amber-500/20 text-xs text-amber-400 space-y-1">
+        <div class="font-bold">Need Immediate Assistance?</div>
+        <div>Call Executive Hotline directly: <a href="tel:8637476998" class="underline font-bold text-white">8637476998</a></div>
+        <div>GSTIN: <span class="font-mono text-white">33CTEPA7543P2ZF</span></div>
+      </div>
+
+      <button id="close-toast" class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 font-bold text-xs uppercase tracking-wider">
+        Return to Portfolio
+      </button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2rJu+/ubKvr35fUF954Cg1OA8Z6zJR8231zdjGBLHP9zdUkY25JmFvG0wD..." crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-in-out'
+    });
+  </script>
+  <script src="./assets/js/main.js"></script>
+
+</body>
+</html>
